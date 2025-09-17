@@ -49,28 +49,36 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
+    company: 'Eido Labs',
+    title: 'Co-Founder and Engineer',
+    start: 'Dec 2024',
     end: 'Present',
-    link: 'https://ibelick.com',
+    link: 'https://eidolabs.xyz',
     id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
+    company: 'SquaredLabs',
+    title: 'Founding Engineer',
+    start: 'Jun 2024',
+    end: 'Dec 2024',
+    link: 'https://www.linkedin.com/company/squaredlabs/',
     id: 'work2',
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
+    company: 'DefiLens',
+    title: 'Engineer Consultant',
+    start: 'Jan 2024',
+    end: 'May 2024',
+    link: '',
     id: 'work3',
+  },
+  {
+    company: 'Find Signal / YieldBay',
+    title: 'Frontend Engineer',
+    start: 'Feb 2022',
+    end: 'Aug 2023',
+    link: 'https://www.findsignal.studio/',
+    id: 'work4',
   },
 ]
 
@@ -106,20 +114,23 @@ export const BLOG_POSTS: BlogPost[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
+    link: 'https://github.com/sarthakxv',
   },
   {
     label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    link: 'https://twitter.com/0xSarthak',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
-  },
-  {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
-  },
+    link: 'https://www.linkedin.com/in/sarthakv',
+  }
 ]
 
-export const EMAIL = 'your@email.com'
+export const PERSONAL_INFO = {
+  NAME: 'Sarthak',
+  TITLE: 'Co-Founder and Engineer @ Eido Labs',
+  DESCRIPTION: 'Focused on creating intuitive and performant web experiences. Bridging the gap between design and development.',
+  EMAIL: 'sarthakvdev@gmail.com',
+  COMPANY_NAME: 'Eido Labs',
+  COMPANY_LINK: 'https://eidolabs.xyz'
+}

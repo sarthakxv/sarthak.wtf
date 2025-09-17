@@ -16,8 +16,8 @@ import {
   PROJECTS,
   WORK_EXPERIENCE,
   BLOG_POSTS,
-  EMAIL,
   SOCIAL_LINKS,
+  PERSONAL_INFO,
 } from './data'
 
 const VARIANTS_CONTAINER = {
@@ -101,6 +101,8 @@ function MagneticSocialLink({
       <a
         href={link}
         className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {children}
         <svg
@@ -137,13 +139,12 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
+            {PERSONAL_INFO.DESCRIPTION}
           </p>
         </div>
       </motion.section>
 
-      <motion.section
+      {/* <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
@@ -170,7 +171,7 @@ export default function Personal() {
             </div>
           ))}
         </div>
-      </motion.section>
+      </motion.section> */}
 
       <motion.section
         variants={VARIANTS_SECTION}
@@ -210,7 +211,7 @@ export default function Personal() {
         </div>
       </motion.section>
 
-      <motion.section
+      {/* <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
@@ -244,7 +245,7 @@ export default function Personal() {
             ))}
           </AnimatedBackground>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       <motion.section
         variants={VARIANTS_SECTION}
@@ -253,8 +254,8 @@ export default function Personal() {
         <h3 className="mb-5 text-lg font-medium">Connect</h3>
         <p className="mb-5 text-zinc-600 dark:text-zinc-400">
           Feel free to contact me at{' '}
-          <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
-            {EMAIL}
+          <a className="underline dark:text-zinc-300" href={`mailto:${PERSONAL_INFO.EMAIL}`}>
+            {PERSONAL_INFO.EMAIL}
           </a>
         </p>
         <div className="flex items-center justify-start space-x-3">
