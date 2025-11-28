@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
+import { WEBSITE_URL } from '@/lib/constants'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -12,7 +13,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sarthak.wtf/'),
+  metadataBase: new URL(WEBSITE_URL),
   alternates: {
     canonical: '/'
   },
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     'Portfolio',
     'Software Engineer'
   ],
-  authors: [{ name: 'Sarthak Verma', url: 'https://sarthak.wtf' }],
+  authors: [{ name: 'Sarthak Verma', url: WEBSITE_URL }],
   creator: 'Sarthak Verma',
   publisher: 'Sarthak Verma',
   robots: {
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://sarthak.wtf',
+    url: WEBSITE_URL,
     title: 'Sarthak Verma - Co-Founder & Engineer at Eido Labs',
     description: 'Co-Founder and Engineer at Eido Labs. Focused on creating intuitive and performant web experiences. Creator of Motion Primitives, bridging the gap between design and development.',
     siteName: 'Sarthak Verma Portfolio',

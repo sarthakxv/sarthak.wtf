@@ -70,12 +70,12 @@ export function Footer() {
   return (
     <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
       <div className="flex items-center justify-between">
-        <a href="https://github.com/sarthakxv/sarthak.wtf" target="_blank" rel="noopener noreferrer">
+        <p>
           <TextLoop className="text-xs text-zinc-500">
             <span>© {new Date().getFullYear()} Sarthak.</span>
             <span>stay curious and keep building.</span>
           </TextLoop>
-        </a>
+        </p>
         <div className="text-xs text-zinc-400">
           <ThemeSwitch />
         </div>

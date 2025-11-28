@@ -1,4 +1,5 @@
 'use client'
+
 import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
@@ -211,11 +212,11 @@ export default function Personal() {
         </div>
       </motion.section>
 
-      {/* <motion.section
+      <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-3 text-lg font-medium">Blog</h3>
+        <h3 className="mb-3 text-lg font-medium">Essays</h3>
         <div className="flex flex-col space-y-0">
           <AnimatedBackground
             enableHover
@@ -245,7 +246,7 @@ export default function Personal() {
             ))}
           </AnimatedBackground>
         </div>
-      </motion.section> */}
+      </motion.section>
 
       <motion.section
         variants={VARIANTS_SECTION}
