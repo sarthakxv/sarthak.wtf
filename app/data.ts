@@ -13,6 +13,7 @@ type WorkExperience = {
   end: string
   link: string
   id: string
+  description: string
 }
 
 type BlogPost = {
@@ -55,6 +56,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Present',
     link: 'https://eidolabs.xyz',
     id: 'work1',
+    description: 'Building the future of decentralized applications with a focus on user experience and security.',
   },
   {
     company: 'SquaredLabs',
@@ -63,6 +65,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Dec 2024',
     link: 'https://www.linkedin.com/company/squaredlabs/',
     id: 'work2',
+    description: 'Developed core infrastructure and frontend components for a high-performance trading platform.',
   },
   {
     company: 'DefiLens',
@@ -71,6 +74,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'May 2024',
     link: '',
     id: 'work3',
+    description: 'Provided technical consultation and implemented key features for a DeFi analytics dashboard.',
   },
   {
     company: 'Find Signal / YieldBay',
@@ -79,36 +83,11 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Aug 2023',
     link: 'https://www.findsignal.studio/',
     id: 'work4',
+    description: 'Built responsive and interactive user interfaces for various fintech clients using React and Next.js.',
   },
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
-  {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/essay/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-1',
-  },
-  {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/essay/why-i-left-my-job-to-start-my-own-company',
-    uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/essay/what-i-learned-from-my-first-year-of-freelancing',
-    uid: 'blog-3',
-  },
-  {
-    title: 'How to Export Metadata from MDX for Next.js SEO',
-    description: 'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
-    link: '/essay/example-mdx-metadata',
-    uid: 'blog-4',
-  },
   {
     title: 'Ready Player One: A Virtual Odyssey',
     description: 'Exploring the immersive world of the OASIS and its implications for our future.',
