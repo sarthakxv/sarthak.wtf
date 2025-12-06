@@ -4,7 +4,7 @@ import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
-import { WEBSITE_URL } from '@/lib/constants'
+import { WEBSITE_URL } from '@/app/data'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     'Frontend Engineer',
     'Co-Founder',
     'Eido Labs',
-    'Motion Primitives',
+    'Crypto Developer',
     'React Developer',
     'TypeScript',
     'Web Development',
