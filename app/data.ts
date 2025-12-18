@@ -49,12 +49,12 @@ export const PROJECTS: Project[] = [
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: 'Eido Labs',
-    title: 'Co-Founder and Engineer',
+    title: 'Co-founder and Head of Engineering',
     start: 'Dec 2024',
     end: 'Present',
     link: 'https://eidolabs.xyz',
     id: 'work1',
-    description: 'Building the future of decentralized applications with a focus on user experience and security.',
+    description: 'Led technical strategy as co-founder. Built two products from 0→1:\n• Eido App — Multi-agent AI system on Berachain for executing DeFi activities via natural language. Shipped beta in 2 months, acquired 3,000+ users, raised $500k, and sold out 1.5k NFT collection.\n• Pills.trade — Telegram bot for 24/7 RWA perpetual trading on Arbitrum & Solana. Designed novel DEX architecture with synthetic pricing oracles and liquidation mechanisms for round-the-clock trading.',
   },
   {
     company: 'SquaredLabs',
@@ -63,25 +63,25 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     end: 'Dec 2024',
     link: 'https://www.linkedin.com/company/squaredlabs/',
     id: 'work2',
-    description: 'Developed core infrastructure and frontend components for a high-performance trading platform.',
+    description: '• Laid down and built the modular frontend architecture of Genie DEX from scratch and built all core functionalities and interactions. Shipped the production to the Base Sepolia testnet.\n• Helped designing the internal SDK for core interactions with Indexer, The Graph, smart contracts, and Potentia Protocol infrastructure layer.',
   },
   {
     company: 'DefiLens',
-    title: 'Engineer Consultant',
-    start: 'Jan 2024',
+    title: 'Sr. Frontend Engineer',
+    start: 'Feb 2024',
     end: 'May 2024',
     link: '',
     id: 'work3',
-    description: 'Provided technical consultation and implemented key features for a DeFi analytics dashboard.',
+    description: '• Joined in the initial phase. Revamped code design patterns and implemented industry-standard UX for transaction flows and user onboarding.\n• Contributed to Product Strategy, Growth, and Community initiatives, increasing DAU to 500+.',
   },
   {
-    company: 'Find Signal / YieldBay',
-    title: 'Frontend Engineer',
+    company: 'YieldBay',
+    title: 'Lead Frontend Engineer',
     start: 'Feb 2022',
-    end: 'Aug 2023',
+    end: 'Sept 2023',
     link: 'https://www.findsignal.studio/',
     id: 'work4',
-    description: 'Built responsive and interactive user interfaces for various fintech clients using React and Next.js.',
+    description: '• Built maintainable frontend architecture for YieldBay, a DeFi Yield Aggregator on Polkadot.\n• Achieved 70% performance improvement through optimized React patterns, data fetching & caching strategies, and reduced bundle size.',
   },
 ]
 
@@ -111,8 +111,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const PERSONAL_INFO = {
   NAME: 'Sarthak',
-  TITLE: 'Co-Founder and Engineer @ Eido Labs',
-  DESCRIPTION: 'Focused on creating intuitive and performant web experiences. Bridging the gap between design and development.',
+  TITLE: 'Co-founder and Head of Engineering @ Eido Labs',
+  DESCRIPTION: 'A product-focused engineer who thrives in the 0→1 journey. Builder at heart. I bridge the gap between complex engineering and seamless user experiences to ship products real people love.',
   EMAIL: 'sarthakvdev@gmail.com',
   COMPANY_NAME: 'Eido Labs',
   COMPANY_LINK: 'https://eidolabs.xyz'

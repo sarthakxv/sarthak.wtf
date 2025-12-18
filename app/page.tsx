@@ -104,10 +104,10 @@ export default function Personal() {
                     initial: { height: 0, opacity: 0, filter: 'blur(4px)' },
                     hover: { height: 'auto', opacity: 1, filter: 'blur(0px)' },
                   }}
-                  transition={{ type: 'spring', bounce: 0, duration: 0.6 }}
+                  transition={{ type: 'spring', bounce: 0, duration: 0.4 }}
                   className="overflow-hidden"
                 >
-                  <p className="pt-4 text-zinc-600 dark:text-zinc-400">
+                  <p className="pt-4 text-zinc-600 dark:text-zinc-400 whitespace-pre-line">
                     {job.description}
                   </p>
                 </motion.div>
