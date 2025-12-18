@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
 import { WEBSITE_URL } from '@/app/data'
+import { geist, geistMono } from '@/lib/fonts'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -76,16 +76,6 @@ export const metadata: Metadata = {
   category: 'Technology',
   classification: 'Portfolio Website',
 };
-
-const geist = Geist({
-  variable: '--font-geist',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
 
 export default function RootLayout({
   children,
