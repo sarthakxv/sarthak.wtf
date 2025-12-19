@@ -2,7 +2,7 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
+  image: string
   id: string
 }
 
@@ -34,14 +34,14 @@ export const PROJECTS: Project[] = [
     description:
       'Trade Stocks, Forex & Commodity derivatives — all via Telegram native RWA Perp DEX',
     link: 'https://pills.trade/',
-    video: 'https://cdn.coverr.co/videos/coverr-a-man-using-a-laptop-and-a-smartphone-6546/1080p.mp4',
+    image: '/images/pills-cover.webp',
     id: 'project1',
   },
   {
     name: 'Eido App',
     description: 'DeFi Copilot. Explore, earn, and execute in DeFi across Berachain — just by chatting.',
     link: 'https://eidolabs.xyz/',
-    video: 'https://cdn.coverr.co/videos/coverr-a-person-typing-on-a-laptop-in-a-modern-office-2365/1080p.mp4',
+    image: '/images/eido-cover.webp',
     id: 'project2',
   },
 ]

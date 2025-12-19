@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: 'Sarthak Verma - Co-Founder @ Eido Labs',
     template: '%s | Sarthak Verma'
   },
-  description: 'gm, i\'m build intuitive & performant crypto product experience.',
+  description: 'gm, i build intuitive & performant crypto product experience.',
   keywords: [
     'Sarthak Verma',
     'Frontend Engineer',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: WEBSITE_URL,
     title: 'Sarthak Verma - Co-Founder & Engineer at Eido Labs',
-    description: 'gm, i\'m build intuitive & performant crypto product experience.',
+    description: 'gm, i build intuitive & performant crypto product experience.',
     siteName: 'Sarthak Verma Portfolio',
     images: [
       {
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sarthak Verma - Co-Founder & Engineer at Eido Labs',
-    description: 'gm, i\'m build intuitive & performant crypto product experience.',
+    description: 'gm, i build intuitive & performant crypto product experience.',
     creator: '@0xSarthak',
     images: ['/cover.png'],
   },
