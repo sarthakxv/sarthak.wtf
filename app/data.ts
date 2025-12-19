@@ -119,7 +119,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const PERSONAL_INFO = {
   NAME: 'Sarthak',
   TITLE: 'Co-founder and Head of Engineering @ Eido Labs',
-  DESCRIPTION: 'A product-focused engineer who thrives in the 0→1 journey. Builder at heart. I bridge the gap between complex engineering and seamless user experiences to ship products real people love.',
+  DESCRIPTION: '• A product-focused engineer who has helped many 0→1 teams. Builder at heart. I bridge the gap between complex engineering and seamless user experiences.\n• Besides code, I degen or play Poker.',
   EMAIL: 'sarthakvdev@gmail.com',
   COMPANY_NAME: 'Eido Labs',
   COMPANY_LINK: 'https://eidolabs.xyz'

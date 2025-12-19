@@ -71,7 +71,7 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-zinc-600 dark:text-zinc-400 whitespace-pre-line">
             {PERSONAL_INFO.DESCRIPTION}
           </p>
         </div>
