@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   title: {
-    default: 'Sarthak Verma - Co-Founder & Engineer at Eido Labs',
+    default: 'Sarthak Verma - Co-Founder @ Eido Labs',
     template: '%s | Sarthak Verma'
   },
-  description: 'Co-Founder and Engineer at Eido Labs. Focused on creating intuitive and performant web experiences. Creator of Motion Primitives, bridging the gap between design and development.',
+  description: 'gm, i\'m build intuitive & performant crypto product experience.',
   keywords: [
     'Sarthak Verma',
     'Frontend Engineer',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: WEBSITE_URL,
     title: 'Sarthak Verma - Co-Founder & Engineer at Eido Labs',
-    description: 'Co-Founder and Engineer at Eido Labs. Focused on creating intuitive and performant web experiences. Creator of Motion Primitives, bridging the gap between design and development.',
+    description: 'gm, i\'m build intuitive & performant crypto product experience.',
     siteName: 'Sarthak Verma Portfolio',
     images: [
       {
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sarthak Verma - Co-Founder & Engineer at Eido Labs',
-    description: 'Co-Founder and Engineer at Eido Labs. Focused on creating intuitive and performant web experiences. Creator of Motion Primitives.',
+    description: 'gm, i\'m build intuitive & performant crypto product experience.',
     creator: '@0xSarthak',
     images: ['/cover.png'],
   },
