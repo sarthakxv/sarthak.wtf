@@ -44,6 +44,13 @@ export const PROJECTS: Project[] = [
     image: '/images/eido-cover.webp',
     id: 'project2',
   },
+  {
+    name: 'Genie DEX',
+    description: 'Squared Perps on Base Network',
+    link: 'https://geniedex.io/',
+    image: '/images/genie-cover.webp',
+    id: 'project3',
+  }
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
