@@ -8,22 +8,26 @@ This is a personal portfolio website for Sarthak Verma, built with Next.js 16, R
 
 ## Development Commands
 
+This project uses **pnpm** (see `pnpm-lock.yaml`). Commands work with `npm` too, but stick with pnpm to avoid lockfile drift.
+
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Run development server (default: http://localhost:3000)
-npm run dev
+pnpm dev
 
 # Build for production
-npm run build
+pnpm build
 
 # Start production server
-npm start
+pnpm start
 
 # Run linter
-npm run lint
+pnpm lint
 ```
+
+There is no test suite configured.
 
 ## Project Structure
 
@@ -33,18 +37,21 @@ npm run lint
   - `data.ts` - Central data source for projects, work experience, blog posts, and personal info
   - `page.tsx` - Main portfolio page with all sections
   - `layout.tsx` - Root layout with metadata, fonts (Geist, Geist Mono), and theme provider
-  - `header.tsx` - Site header component
-  - `footer.tsx` - Site footer component
+  - `header.tsx` / `footer.tsx` - Site chrome
+  - `robots.ts` - Generates `/robots.txt` (uses `WEBSITE_URL` from `data.ts`)
   - `essay/` - MDX blog posts directory with custom layout
 - `components/ui/` - Reusable animated UI components from Motion-Primitives
-- `lib/utils.ts` - Utility functions (cn helper for Tailwind class merging)
+- `hooks/useClickOutside.tsx` - Click-outside hook (used by `morphing-dialog`)
+- `lib/utils.ts` - Utility functions (`cn` helper for Tailwind class merging)
+- `mdx-components.tsx` - Required by `@next/mdx`. Defines a `<Cover>` figure component and overrides `<code>` to apply `sugar-high` syntax highlighting in MDX posts.
 - `public/` - Static assets
 
 ### Key Configuration Files
 
-- `next.config.mjs` - Next.js configuration with MDX support
+- `next.config.mjs` - Wraps the Next config in `withMDX` and adds `md`/`mdx` to `pageExtensions` so MDX files become routes.
 - `tsconfig.json` - TypeScript config with `@/*` path alias pointing to root
 - `eslint.config.mjs` - ESLint with Next.js, TypeScript, Prettier, and MDX support
+- `.prettierrc.json` - Style is **no semicolons, single quotes, 2-space tabs, trailing commas, 80 col**, with `prettier-plugin-tailwindcss` for class sorting. Match this when generating new code.
 
 ## Architecture
 
@@ -79,6 +86,7 @@ The site uses Motion (motion.js) for animations:
   - `animated-background.tsx` - Animated background for list items
   - `text-effect.tsx`, `text-morph.tsx`, `text-loop.tsx` - Text animations
   - `scroll-progress.tsx` - Scroll position indicator
+  - `wobble-image.tsx` - Cursor-tracking wobble effect for images
 
 ### Styling
 
@@ -98,8 +106,9 @@ The site uses Motion (motion.js) for animations:
 ### Adding New Blog Posts
 
 1. Create directory `app/essay/[slug]/`
-2. Add `page.mdx` file with content
+2. Add `page.mdx` file with content (use `<Cover src=… alt=… caption=… />` for hero images — defined in `mdx-components.tsx`)
 3. Add entry to `BLOG_POSTS` array in `app/data.ts` with matching link path
+4. Code blocks in MDX are auto-highlighted via `sugar-high` — no language fences or extra config needed
 
 ### Creating Animated Components
 
