@@ -4,7 +4,7 @@ import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
 import { WEBSITE_URL } from '@/app/data'
-import { geist, geistMono } from '@/lib/fonts'
+import { geist, geistMono, spectral } from '@/lib/fonts'
 import { Analytics } from '@vercel/analytics/next'
 
 export const viewport: Viewport = {
@@ -86,7 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
+        className={`${geist.variable} ${geistMono.variable} ${spectral.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
       >
         <ThemeProvider
           enableSystem={true}
