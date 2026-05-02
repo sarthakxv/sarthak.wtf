@@ -111,11 +111,12 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Ready Player One: A Virtual Odyssey',
-    description: 'Exploring the immersive world of the OASIS and its implications for our future.',
-    link: '/essay/ready-player-one',
-    uid: 'blog-5',
-  },
+    title: 'The Perpification of Everything',
+    description:
+      'Prediction markets and perpetual DEXs are converging into a single category — synthetic exposure infrastructure. What that means for builders.',
+    link: '/essay/perpification-of-everything',
+    uid: 'blog-1',
+  }
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
