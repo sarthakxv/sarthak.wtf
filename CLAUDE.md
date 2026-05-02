@@ -23,11 +23,11 @@ pnpm build
 # Start production server
 pnpm start
 
-# Run linter
-pnpm lint
+# Type-check (use this — see note below)
+npx tsc --noEmit
 ```
 
-There is no test suite configured.
+**Heads-up:** `pnpm lint` is currently broken — Next.js 16 removed `next lint`, so the script in `package.json` errors out. Use `npx tsc --noEmit` for verification until the lint script is migrated to ESLint CLI. There is no test suite configured.
 
 ## Project Structure
 
@@ -59,7 +59,7 @@ There is no test suite configured.
 
 All content is centralized in `app/data.ts`:
 
-- `PROJECTS` - Portfolio projects with name, description, link, and video
+- `PROJECTS` - Portfolio projects with `name`, `description`, `link`, `image`, and `id`
 - `WORK_EXPERIENCE` - Job history with company, title, dates, and description
 - `BLOG_POSTS` - Essay links and metadata
 - `SOCIAL_LINKS` - External profile links
@@ -79,14 +79,11 @@ The site uses Motion (motion.js) for animations:
 
 - Main page uses staggered fade-in animations with `VARIANTS_CONTAINER` and `VARIANTS_SECTION`
 - Mobile detection for hover states: `isMobile` state controls when hover animations are always active
-- Custom UI components in `components/ui/`:
-  - `morphing-dialog.tsx` - Expandable video/image modals
-  - `magnetic.tsx` - Magnetic hover effect for interactive elements
-  - `spotlight.tsx` - Gradient spotlight effect on hover
-  - `animated-background.tsx` - Animated background for list items
-  - `text-effect.tsx`, `text-morph.tsx`, `text-loop.tsx` - Text animations
-  - `scroll-progress.tsx` - Scroll position indicator
-  - `wobble-image.tsx` - Cursor-tracking wobble effect for images
+- Load-bearing components in `components/ui/` (browse the directory for the rest):
+  - `morphing-dialog.tsx` — expandable image/video modals (uses `useClickOutside`)
+  - `magnetic.tsx` — magnetic hover for interactive elements
+  - `spotlight.tsx` — gradient spotlight on hover
+  - `animated-background.tsx` — list-item background animation
 
 ### Styling
 
@@ -101,7 +98,8 @@ The site uses Motion (motion.js) for animations:
 ### Adding New Projects
 
 1. Add project object to `PROJECTS` array in `app/data.ts`
-2. Include: `name`, `description`, `link`, `video` (URL to video preview), and unique `id`
+2. Include: `name`, `description`, `link`, `image`, and unique `id`
+3. Drop the cover image at `public/images/<slug>-cover.webp` — every existing entry follows this naming convention
 
 ### Adding New Blog Posts
 
@@ -126,6 +124,7 @@ The site uses Motion (motion.js) for animations:
 
 Metadata is configured in `app/layout.tsx`:
 
-- Update `WEBSITE_URL` in `app/data.ts` when deploying
+- `WEBSITE_URL` in `app/data.ts` is the source of truth for canonical URL, OG, and `robots.ts` — update it when domain changes
 - Metadata includes OpenGraph, Twitter cards, and structured data
 - Viewport settings and theme color defined in layout
+- Vercel Analytics is wired in `app/layout.tsx` via `@vercel/analytics/next`
