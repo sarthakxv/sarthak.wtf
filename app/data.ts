@@ -126,7 +126,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: 'Twitter',
-    link: 'https://twitter.com/0xSarthak',
+    link: 'https://x.com/0xSarthak',
   },
   {
     label: 'LinkedIn',

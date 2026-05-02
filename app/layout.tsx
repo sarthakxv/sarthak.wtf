@@ -19,12 +19,16 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   title: {
-    default: 'Sarthak Verma - Co-Founder @ Eido Labs',
+    default: 'Sarthak Verma - Founding Engineer @ Gold.fi',
     template: '%s | Sarthak Verma'
   },
-  description: 'gm, i build intuitive & performant crypto product experiences.',
+  description: 'senior engineer and ex-founder. i build intuitive & performant crypto product experiences.',
   keywords: [
     'Sarthak Verma',
+    'Founding Engineer',
+    'Gold.fi',
+    'DeFi Engineer',
+    'RWA',
     'Frontend Engineer',
     'Co-Founder',
     'Eido Labs',
@@ -32,8 +36,6 @@ export const metadata: Metadata = {
     'React Developer',
     'TypeScript',
     'Web Development',
-    'UI/UX Design',
-    'Design Engineering',
     'Portfolio',
     'Software Engineer'
   ],
@@ -55,8 +57,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: WEBSITE_URL,
-    title: 'Sarthak Verma - Co-Founder & Engineer at Eido Labs',
-    description: 'gm, i build intuitive & performant crypto product experiences.',
+    title: 'Sarthak Verma - Founding Engineer @ Gold.fi',
+    description: 'senior engineer and ex-founder. i build intuitive & performant crypto product experiences.',
     siteName: 'Sarthak Verma Portfolio',
     images: [
       {
@@ -69,8 +71,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sarthak Verma - Co-Founder & Engineer at Eido Labs',
-    description: 'gm, i build intuitive & performant crypto product experiences.',
+    title: 'Sarthak Verma - Founding Engineer @ Gold.fi',
+    description: 'senior engineer and ex-founder. i build intuitive & performant crypto product experiences.',
     creator: '@0xSarthak',
     images: ['/cover.png'],
   },
