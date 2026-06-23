@@ -1,0 +1,130 @@
+[
+  {
+    "title": "xaut.cool",
+    "role": "Side project",
+    "period": "2026",
+    "summary": "Real-time analytics dashboard tracking XAUT tokenized gold supply across 8 chains with Native Ethereum and LayerZero OFT bridges.",
+    "image": "/work/xaut-cover.webp",
+    "link": "https://xaut-cool.vercel.app/"
+  },
+  {
+    "title": "pills.trade",
+    "role": "Co-founder, Eido Labs",
+    "period": "2025",
+    "summary": "Trade Stocks, Forex & Commodity derivatives — all via Telegram. RWA Perp DEX with synthetic pricing oracles for round-the-clock trading.",
+    "image": "/work/pills-cover.webp",
+    "link": "https://pills.trade/"
+  },
+  {
+    "title": "Eido App",
+    "role": "Co-founder, Head of Engineering",
+    "period": "2024 — 2025",
+    "summary": "DeFi Copilot on Berachain. Explore, earn, and execute via chat. Multi-agent system with LangGraph orchestration. 3,000+ users, $500k raised.",
+    "image": "/work/eido-cover.webp",
+    "link": "https://eidolabs.xyz/"
+  },
+  {
+    "title": "Genie DEX",
+    "role": "Founding Engineer #3, SquaredLabs",
+    "period": "2024",
+    "summary": "Squared Perps on Base Network. Built the modular frontend architecture from scratch — production shipped to Base Sepolia testnet.",
+    "image": "/work/genie-cover.webp",
+    "link": "https://geniedex.io/"
+  },
+  {
+    "title": "Sketch · 01",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-01.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 02",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-02.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 03",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-03.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 04",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-04.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 05",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-05.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 06",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-06.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 07",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-07.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 08",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-08.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 09",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-09.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 10",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-10.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 11",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-11.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 12",
+    "role": "Exploration",
+    "period": "2024",
+    "summary": "Visual exploration.",
+    "image": "/work/frame-12.png",
+    "link": "#"
+  }
+]
