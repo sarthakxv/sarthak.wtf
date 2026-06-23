@@ -1,0 +1,8 @@
+{
+  "profiles": [
+    { "label": "X", "href": "https://x.com/0xSarthak" },
+    { "label": "GitHub", "href": "https://github.com/sarthakxv" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/sarthakv" }
+  ],
+  "email": "sarthakvdev@gmail.com"
+}

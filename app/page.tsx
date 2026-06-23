@@ -10,36 +10,16 @@ import { TRexGame } from "@/components/home/TRexGame";
 import { SimpleRow as Row } from "@/components/home/SimpleRow";
 import bookshelf from "@/content/bookshelf.json";
 import work from "@/content/work.json";
-
-const experience = [
-  { role: "Founding Engineer", company: "Gold.fi", href: "https://gold.fi", date: "Jan 2026 — Present" },
-  { role: "Co-founder, Head of Engineering", company: "Eido Labs", href: "https://eidolabs.xyz", date: "Dec 2024 — Dec 2025" },
-  { role: "Sr. Frontend Engineer · Founding #3", company: "SquaredLabs", href: "https://www.linkedin.com/company/squaredlabs/", date: "Jun 2024 — Dec 2024" },
-  { role: "Sr. Frontend Engineer", company: "DefiLens", href: null, date: "Feb 2024 — May 2024" },
-  { role: "Lead Frontend Engineer", company: "YieldBay", href: "https://www.findsignal.studio/", date: "Feb 2022 — Sept 2023" },
-];
-
-const artifacts = [
-  { title: "The Perpification of Everything", href: "/essay/perpification-of-everything", date: "2025" },
-];
-
-const experiments = [
-  { title: "xaut.cool", href: "https://xaut-cool.vercel.app/" },
-  { title: "pills.trade", href: "https://pills.trade/" },
-  { title: "Eido App", href: "https://eidolabs.xyz/" },
-  { title: "Genie DEX", href: "https://geniedex.io/" },
-  { title: "Choplab", href: "/projects/choplab" },
-  { title: "Stash", href: "/stash" },
-];
+import experience from "@/content/experience.json";
+import artifacts from "@/content/artifacts.json";
+import experiments from "@/content/experiments.json";
+import socials from "@/content/socials.json";
 
 const books = bookshelf as Book[];
 const workItems = work as WorkItem[];
 
 const linkClass =
   "underline decoration-dotted decoration-current/30 underline-offset-4 text-[color:var(--ink-fg)] hover:decoration-current/60 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 rounded-sm";
-
-const mutedLinkClass =
-  "text-[color:var(--ink-soft)] underline decoration-dotted decoration-current/30 underline-offset-4 cursor-default";
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
@@ -61,12 +41,12 @@ export default function Home() {
             <LissajousName name="SARTHAK" size={40} gap={8} />
           </div>
 
-          {/* 2. Intro */}
+          {/* 2. Subheading — role line under the name */}
           <p
-            className="fade-in mt-8 text-sm leading-relaxed text-[color:var(--ink-mid)]"
-            style={{ animationDelay: "50ms" }}
+            className="fade-in mt-3 text-sm text-[color:var(--ink-soft)]"
+            style={{ animationDelay: "30ms" }}
           >
-            I&apos;m Sarthak — founding engineer / head of engineering at{" "}
+            Founding Engineer / Head of Engineering @{" "}
             <a
               href="https://gold.fi"
               target="_blank"
@@ -75,13 +55,25 @@ export default function Home() {
             >
               Gold.fi
             </a>
-            . Senior engineer and ex-founder, 4+ years shipping DeFi and AI
+          </p>
+
+          {/* 3. Intro */}
+          <p
+            className="fade-in mt-6 text-sm leading-relaxed text-[color:var(--ink-mid)]"
+            style={{ animationDelay: "50ms" }}
+          >
+            Senior engineer and ex-founder, 4+ years shipping DeFi and AI
             products from 0→1 — RWA perps, DEXes, and now tokenized gold on
             Ethereum. Frontend-heavy with full-stack depth, best where
             engineering and product decisions are the same conversation.
             Besides code, I degen or play poker —{" "}
-            <a href="mailto:sarthakvdev@gmail.com" className={linkClass}>
-              drop a note
+            <a
+              href="https://t.me/sarthakxv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              drop on telegram
             </a>{" "}
             or{" "}
             <a
@@ -95,13 +87,13 @@ export default function Home() {
             .
           </p>
 
-          {/* 3. Featured card — work carousel + commit graph */}
+          {/* 4. Featured card — work carousel + commit graph */}
           <div className="fade-in mt-12 flex flex-col gap-6" style={{ animationDelay: "100ms" }}>
             <WorkCarousel items={workItems} />
             <CommitGraph />
           </div>
 
-          {/* 4. Experience */}
+          {/* 5. Experience */}
           <section className="fade-in mt-12" style={{ animationDelay: "150ms" }}>
             <SectionLabel>experience</SectionLabel>
             <ul className="flex flex-col">
@@ -138,7 +130,7 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* 5. Artifacts */}
+          {/* 6. Artifacts */}
           <section className="fade-in mt-12" style={{ animationDelay: "200ms" }}>
             <SectionLabel>artifacts</SectionLabel>
             <ul className="flex flex-col">
@@ -156,7 +148,7 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* 6. Experiments */}
+          {/* 7. Experiments */}
           <section className="fade-in mt-12" style={{ animationDelay: "250ms" }}>
             <SectionLabel>experiments</SectionLabel>
             <ul className="flex flex-col">
@@ -174,46 +166,33 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* 7. Bookshelf */}
+          {/* 8. Bookshelf */}
           <section className="fade-in mt-12" style={{ animationDelay: "300ms" }}>
             <SectionLabel>bookshelf</SectionLabel>
             <Bookshelf books={books} />
           </section>
 
-          {/* 8. Elsewhere */}
+          {/* 9. Elsewhere */}
           <section className="fade-in mt-12" style={{ animationDelay: "350ms" }}>
             <SectionLabel>elsewhere</SectionLabel>
             <p className="text-sm text-[color:var(--ink-mid)] leading-relaxed">
               find me on{" "}
-              <a
-                href="https://x.com/0xSarthak"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                X/Twitter
-              </a>
-              ,{" "}
-              <a
-                href="https://github.com/sarthakxv"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                GitHub
-              </a>
-              ,{" "}
-              <a
-                href="https://www.linkedin.com/in/sarthakv"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
-                LinkedIn
-              </a>
+              {socials.profiles.map((profile, i) => (
+                <span key={profile.label}>
+                  <a
+                    href={profile.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass}
+                  >
+                    {profile.label}
+                  </a>
+                  {i < socials.profiles.length - 1 ? ", " : ""}
+                </span>
+              ))}
               , or reach me at{" "}
-              <a href="mailto:sarthakvdev@gmail.com" className={linkClass}>
-                sarthakvdev@gmail.com
+              <a href={`mailto:${socials.email}`} className={linkClass}>
+                {socials.email}
               </a>
               .
             </p>

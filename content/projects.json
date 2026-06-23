@@ -1,7 +1,0 @@
-[
-  { "name": "Choplab", "desc": "Turn any song into an instrument", "href": "/projects/choplab", "icon": "/icons/choplab.svg", "aside": "weekend build, sampling on the side" },
-  { "name": "Perp-DEX Sketch", "desc": "Order book + funding rate prototype", "href": "#", "icon": "/icons/perp.svg" },
-  { "name": "AI Trading Sim", "desc": "Backtester with LLM strategy hooks", "href": "#", "icon": "/icons/sim.svg" },
-  { "name": "Onchain Order Flow", "desc": "Mempool-flow visualizer", "href": "#", "icon": "/icons/orderflow.svg" },
-  { "name": "Stash", "desc": "Sites worth seeing", "href": "/stash", "icon": "/icons/stash.svg" }
-]
