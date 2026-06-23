@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { playClick } from "@/lib/sound";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 export type Book = {
   id: string;
@@ -24,18 +25,6 @@ function coverUrl(isbn: string) {
 
 const EASE = "cubic-bezier(0.45, 0, 0.2, 1)";
 const DURATION = 700;
-
-function usePrefersReducedMotion() {
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const onChange = () => setReduced(mq.matches);
-    onChange();
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-  return reduced;
-}
 
 export function Bookshelf({ books }: { books: Book[] }) {
   const [openId, setOpenId] = useState<string>(books[0]?.id ?? "");

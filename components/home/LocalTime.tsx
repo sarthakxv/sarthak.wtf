@@ -41,7 +41,7 @@ export function LocalTime() {
       className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.08em] text-[color:var(--color-mid)]"
       style={{ fontFamily: "var(--font-mono)" }}
     >
-      <span>mumbai</span>
+      <span>india</span>
       <span aria-hidden>·</span>
       <span style={{ fontVariantNumeric: "tabular-nums" }}>
         {parts ? parts.time : "--:--:--"}
