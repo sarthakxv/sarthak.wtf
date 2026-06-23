@@ -43,3 +43,6 @@ next-env.d.ts
 # local dev config
 .claude/
 todos.md
+
+# superpowers brainstorming plans & specs
+docs/
