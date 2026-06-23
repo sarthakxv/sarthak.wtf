@@ -1,0 +1,21 @@
+{
+  "updated": "22 Jun 2026",
+  "intro": "personal sites are usually a good read on someone's taste. these are the ones i keep coming back to.",
+  "links": [
+    { "label": "of.domains", "href": "https://of.domains/", "note": "domain hunting as art" },
+    { "label": "dany.works", "href": "https://dany.works/", "note": "still my favourite use of foliage shadows" },
+    { "label": "erebor.bank", "href": "https://erebor.bank/" },
+    { "label": "paradigm.xyz", "href": "https://www.paradigm.xyz/" },
+    { "label": "f.inc/artifact", "href": "https://f.inc/artifact" },
+    { "label": "amanvir.com", "href": "https://amanvir.com/", "note": "lowercase indie builder" },
+    { "label": "farza.com", "href": "https://farza.com/", "note": "voice over polish" },
+    { "label": "cora.computer", "href": "https://cora.computer/" },
+    { "label": "feather.computer", "href": "https://feather.computer/" },
+    { "label": "code.storage", "href": "https://code.storage/" },
+    { "label": "timesyste.ms", "href": "https://timesyste.ms/" },
+    { "label": "in.tern.et", "href": "https://in.tern.et/" },
+    { "label": "meaning.company", "href": "https://meaning.company/" },
+    { "label": "pool.day", "href": "https://pool.day/" },
+    { "label": "dris.one", "href": "https://dris.one/", "note": "half this list came from his stash" }
+  ]
+}
