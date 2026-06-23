@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #ffffff;
+  --color-text: #09090b;
+  --color-mid: #71717a;
+  --color-line: #e4e4e7;
+  --color-hover-bg: #fafafa;
+  --color-accent: #18181b;
+  --font-sans: "SF Pro Rounded", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-jetbrains), "SF Mono", ui-monospace, Menlo, monospace;
+  --font-handwritten: var(--font-caveat);
+  --font-display: var(--font-pacifico);
+  --breakpoint-desktop: 1024px;
+}
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #09090b;
+  --color-mid: #71717a;
+  --color-line: #e4e4e7;
+  --color-hover-bg: #fafafa;
+  --color-accent: #18181b;
+
+  /* Customization tokens */
+  --radius: 8px;
+  --font-active: var(--font-sans);
+  --ink-fg: #18181b;
+  --ink-mid: #52525b;
+  --ink-soft: #71717a;
+  --bg-base: #ffffff;
+}
+
+[data-bg="ocean"] {
+  --bg-base: #0a1226;
+  --ink-fg: #e8e6df;
+  --ink-mid: #b8bccc;
+  --ink-soft: #8a90a3;
+}
+[data-bg="sunset"] {
+  --bg-base: #2b1a3a;
+  --ink-fg: #f4ece1;
+  --ink-mid: #d8c4b0;
+  --ink-soft: #b89e88;
+}
+[data-bg="forest"] {
+  --bg-base: #eef0e6;
+  --ink-fg: #2a3424;
+  --ink-mid: #4d5742;
+  --ink-soft: #7a826a;
+}
+[data-bg="leaves"] {
+  --bg-base: #ffffff;
+  --ink-fg: #18181b;
+  --ink-mid: #52525b;
+  --ink-soft: #71717a;
+}
+
+html,
+body {
+  background-color: var(--bg-base);
+  color: var(--ink-fg);
+}
+
+body {
+  font-family: var(--font-active);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-handwritten {
+  font-family: var(--font-handwritten), cursive;
+}
+
+.font-display {
+  font-family: var(--font-display), cursive;
+}
+
+.tab-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Style presets ──────────────────────────────────────────────── */
+
+[data-style="scribble"] body {
+  font-family: var(--font-handwritten), cursive;
+  letter-spacing: 0.01em;
+}
+[data-style="scribble"] a {
+  text-decoration-style: wavy !important;
+}
+[data-style="scribble"] .customize-panel,
+[data-style="scribble"] .customize-panel * {
+  font-family: var(--font-active);
+}
+
+[data-style="fluid"] {
+  --radius: max(var(--radius), 12px);
+}
+[data-style="fluid"] body {
+  letter-spacing: -0.005em;
+}
+[data-style="fluid"] h1,
+[data-style="fluid"] h2,
+[data-style="fluid"] h3,
+[data-style="fluid"] .font-semibold {
+  font-weight: 500;
+}
+
+/* ── Dark scenes: panel inversion ───────────────────────────────── */
+
+[data-bg="ocean"] .customize-panel,
+[data-bg="sunset"] .customize-panel {
+  background: rgba(10, 14, 28, 0.55);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #f5f3ee;
+}
+[data-bg="ocean"] .customize-panel .customize-select,
+[data-bg="sunset"] .customize-panel .customize-select {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #f5f3ee;
+}
+[data-bg="ocean"] .customize-trigger,
+[data-bg="sunset"] .customize-trigger {
+  background: rgba(10, 14, 28, 0.5);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #f5f3ee;
+}
+
+@keyframes sunset-float-a {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(4vw, -3vh); }
+}
+@keyframes sunset-float-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-3vw, 2vh); }
+}
+@keyframes sunset-float-c {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(2vw, 3vh); }
+}
+.sunset-orb-a { animation: sunset-float-a 18s ease-in-out infinite; }
+.sunset-orb-b { animation: sunset-float-b 22s ease-in-out infinite; }
+.sunset-orb-c { animation: sunset-float-c 26s ease-in-out infinite; }
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    opacity: 0;
+    animation: fade-slide-up 0.25s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  }
+}
+
+@keyframes push-down-out {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .sunset-orb-a, .sunset-orb-b, .sunset-orb-c { animation: none !important; }
+}

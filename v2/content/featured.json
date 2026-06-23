@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Gold.fi",
+    "desc": "Tokenized gold on Ethereum",
+    "href": "https://gold.fi",
+    "icon": "/icons/gold.svg",
+    "aside": "shipped from a 14-hour redbull-fueled push"
+  },
+  {
+    "name": "Perpification of Everything",
+    "desc": "Essay — Dec 2025",
+    "href": "/essay/perpification-of-everything",
+    "icon": "/icons/essay.svg",
+    "aside": "still my favourite piece"
+  },
+  {
+    "name": "Stealth (prior)",
+    "desc": "DeFi infra, 0→1",
+    "href": "#",
+    "icon": "/icons/stealth.svg"
+  }
+]
