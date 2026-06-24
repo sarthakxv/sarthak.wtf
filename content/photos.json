@@ -1,0 +1,44 @@
+[
+  {
+    "id": "goldfi-launch",
+    "src": "https://picsum.photos/seed/goldfi-launch/800/1000",
+    "title": "gold.fi launch night",
+    "note": "tea after the 2am push — the dashboard finally rendered.",
+    "rotation": -4
+  },
+  {
+    "id": "devcon",
+    "src": "https://picsum.photos/seed/devcon-1/800/1000",
+    "title": "first devcon",
+    "note": "lost in bangkok with 8000 strangers who all wanted to talk about block size.",
+    "rotation": 3
+  },
+  {
+    "id": "ableton",
+    "src": "https://picsum.photos/seed/ableton-night/800/1000",
+    "title": "ableton at 3am",
+    "note": "learning sampling the hard way — bouncing the same loop for an hour.",
+    "rotation": -2
+  },
+  {
+    "id": "goa",
+    "src": "https://picsum.photos/seed/goa-summer/800/1000",
+    "title": "goa, summer 2024",
+    "note": "took a week to think about nothing.",
+    "rotation": 5
+  },
+  {
+    "id": "whiteboard",
+    "src": "https://picsum.photos/seed/whiteboard/800/1000",
+    "title": "squaredlabs whiteboard",
+    "note": "the genie dex architecture — about 30 minutes before everything got renamed.",
+    "rotation": -3
+  },
+  {
+    "id": "monitor",
+    "src": "https://picsum.photos/seed/monitor-glow/800/1000",
+    "title": "late shift",
+    "note": "writing solidity at home, the cat refuses to leave the keyboard.",
+    "rotation": 2
+  }
+]
