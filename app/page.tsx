@@ -1,21 +1,21 @@
 import type { ReactNode } from "react";
 import { PageShell } from "@/components/layout/PageShell";
 import { LissajousName } from "@/components/home/LissajousName";
-import { Bookshelf, type Book } from "@/components/home/Bookshelf";
+import { Polaroids, type Photo } from "@/components/home/Polaroids";
 import { WorkCarousel, type WorkItem } from "@/components/home/WorkCarousel";
 import { CommitGraph } from "@/components/home/CommitGraph";
 import { SoundToggle } from "@/components/home/SoundToggle";
 import { Footer } from "@/components/home/Footer";
 import { TRexGame } from "@/components/home/TRexGame";
 import { SimpleRow as Row } from "@/components/home/SimpleRow";
-import bookshelf from "@/content/bookshelf.json";
+import photos from "@/content/photos.json";
 import work from "@/content/work.json";
 import experience from "@/content/experience.json";
 import artifacts from "@/content/artifacts.json";
 import experiments from "@/content/experiments.json";
 import socials from "@/content/socials.json";
 
-const books = bookshelf as Book[];
+const photoItems = photos as Photo[];
 const workItems = work as WorkItem[];
 
 const linkClass =
@@ -166,10 +166,10 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* 8. Bookshelf */}
+          {/* 8. Pictures */}
           <section className="fade-in mt-12" style={{ animationDelay: "300ms" }}>
-            <SectionLabel>bookshelf</SectionLabel>
-            <Bookshelf books={books} />
+            <SectionLabel>pictures</SectionLabel>
+            <Polaroids photos={photoItems} />
           </section>
 
           {/* 9. Elsewhere */}
