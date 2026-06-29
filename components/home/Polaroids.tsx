@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X } from "@phosphor-icons/react";
+import { XIcon } from "@phosphor-icons/react";
 import { playClick } from "@/lib/sound";
 
 export type Photo = {
@@ -110,7 +110,7 @@ export function Polaroids({ photos }: { photos: Photo[] }) {
               onClick={() => setOpenId(null)}
               className="absolute -top-3 -right-3 z-10 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white text-zinc-700 hover:text-zinc-900 shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
             >
-              <X size={16} weight="regular" />
+              <XIcon size={16} weight="regular" />
             </button>
             <div
               className="relative bg-white mx-auto"

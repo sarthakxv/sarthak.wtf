@@ -1,21 +1,21 @@
 import type { ReactNode } from "react";
 import { PageShell } from "@/components/layout/PageShell";
 import { LissajousName } from "@/components/home/LissajousName";
-import { Polaroids, type Photo } from "@/components/home/Polaroids";
+// import { Polaroids, type Photo } from "@/components/home/Polaroids";
 import { WorkCarousel, type WorkItem } from "@/components/home/WorkCarousel";
 import { CommitGraph } from "@/components/home/CommitGraph";
 import { SoundToggle } from "@/components/home/SoundToggle";
 import { Footer } from "@/components/home/Footer";
 import { TRexGame } from "@/components/home/TRexGame";
 import { SimpleRow as Row } from "@/components/home/SimpleRow";
-import photos from "@/content/photos.json";
+// import photos from "@/content/photos.json";
 import work from "@/content/work.json";
 import experience from "@/content/experience.json";
 import artifacts from "@/content/artifacts.json";
 import experiments from "@/content/experiments.json";
 import socials from "@/content/socials.json";
 
-const photoItems = photos as Photo[];
+// const photoItems = photos as Photo[];
 const workItems = work as WorkItem[];
 
 const linkClass =
@@ -166,11 +166,11 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* 8. Pictures */}
-          <section className="fade-in mt-12" style={{ animationDelay: "300ms" }}>
+          {/* 8. Pictures — temporarily hidden, will add pictures later */}
+          {/* <section className="fade-in mt-12" style={{ animationDelay: "300ms" }}>
             <SectionLabel>pictures</SectionLabel>
             <Polaroids photos={photoItems} />
-          </section>
+          </section> */}
 
           {/* 9. Elsewhere */}
           <section className="fade-in mt-12" style={{ animationDelay: "350ms" }}>
