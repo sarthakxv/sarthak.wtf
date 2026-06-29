@@ -26,38 +26,30 @@ type Layer = {
 export function WorkCarousel({ items }: { items: WorkItem[] }) {
   const reduced = useReducedMotion();
   const [idx, setIdx] = useState(0);
-  const [exitingKey, setExitingKey] = useState<number | null>(null);
-  const keyRef = useRef(0);
-  const layersRef = useRef<Layer[]>([
-    { key: keyRef.current++, item: items[0], exiting: false },
-    { key: keyRef.current++, item: items[1 % items.length], exiting: false },
+  const keyRef = useRef(2);
+  const [layers, setLayers] = useState<Layer[]>(() => [
+    { key: 0, item: items[0], exiting: false },
+    { key: 1, item: items[1 % items.length], exiting: false },
   ]);
-  const [, force] = useState(0);
 
   const advance = useCallback(() => {
     const nextIdx = (idx + 1) % items.length;
     const newIdx = (nextIdx + 1) % items.length;
     if (reduced) {
-      layersRef.current = [
+      setLayers([
         { key: keyRef.current++, item: items[nextIdx], exiting: false },
         { key: keyRef.current++, item: items[newIdx], exiting: false },
-      ];
+      ]);
       setIdx(nextIdx);
-      force((n) => n + 1);
       return;
     }
-    const layers = layersRef.current;
-    const exiting = { ...layers[0], exiting: true };
-    const incoming = { ...layers[1], exiting: false };
-    const newBottom = {
-      key: keyRef.current++,
-      item: items[newIdx],
-      exiting: false,
-    };
-    layersRef.current = [exiting, incoming, newBottom];
-    setExitingKey(exiting.key);
+    const newKey = keyRef.current++;
+    setLayers((prev) => [
+      { ...prev[0], exiting: true },
+      { ...prev[1], exiting: false },
+      { key: newKey, item: items[newIdx], exiting: false },
+    ]);
     setIdx(nextIdx);
-    force((n) => n + 1);
   }, [idx, items, reduced]);
 
   useEffect(() => {
@@ -65,18 +57,14 @@ export function WorkCarousel({ items }: { items: WorkItem[] }) {
     return () => clearInterval(t);
   }, [advance]);
 
-  const handleAnimEnd = (key: number) => {
-    if (key !== exitingKey) return;
-    layersRef.current = layersRef.current.filter((l) => l.key !== key);
-    setExitingKey(null);
-    force((n) => n + 1);
+  const handleAnimEnd = (layer: Layer) => {
+    if (!layer.exiting) return;
+    setLayers((prev) => prev.filter((l) => l.key !== layer.key));
   };
-
-  const layers = layersRef.current;
 
   return (
     <div
-      className="group/card relative w-full aspect-video rounded-[8px] overflow-hidden bg-neutral-100 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.04)] hover:shadow-[0_1px_3px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.08)] transition-shadow duration-300"
+      className="group/card relative w-full aspect-video rounded-lg overflow-hidden bg-neutral-100 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.04)] hover:shadow-[0_1px_3px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.08)] transition-shadow duration-300"
       style={{ isolation: "isolate", transform: "translateZ(0)" }}
     >
       {layers.map((layer, i) => {
@@ -92,7 +80,7 @@ export function WorkCarousel({ items }: { items: WorkItem[] }) {
               willChange: "transform",
               animation: layer.exiting && !reduced ? EXIT_ANIM : undefined,
             }}
-            onAnimationEnd={() => handleAnimEnd(layer.key)}
+            onAnimationEnd={() => handleAnimEnd(layer)}
           >
             <div className="absolute inset-0 bg-neutral-100">
               {/* eslint-disable-next-line @next/next/no-img-element */}

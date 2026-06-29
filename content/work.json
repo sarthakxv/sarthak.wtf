@@ -1,5 +1,13 @@
 [
   {
+    "title": "Gold.Fi (Bullion Digital)",
+    "role": "Founding Engineer",
+    "period": "Jan 2026 — Present",
+    "summary": "Tokenized gold savings app backed by Tether Gold (XAUT), built for Indian consumers. Buy gold under 10s, zero paperwork, via UPI or USDC, then put that gold to work and earn yield on top of it.",
+    "image": "/work/goldfi-main.webp",
+    "link": "https://gold.fi"
+  },
+  {
     "title": "xaut.cool",
     "role": "Side project",
     "period": "2026",
@@ -125,6 +133,22 @@
     "period": "2024",
     "summary": "Visual exploration.",
     "image": "/work/frame-12.png",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 13",
+    "role": "Exploration",
+    "period": "2026",
+    "summary": "Visual exploration.",
+    "image": "/work/goldfi-main.webp",
+    "link": "#"
+  },
+  {
+    "title": "Sketch · 14",
+    "role": "Exploration",
+    "period": "2026",
+    "summary": "Visual exploration.",
+    "image": "/work/goldfi-transaction.webp",
     "link": "#"
   }
 ]

@@ -27,7 +27,6 @@ Open <http://localhost:3000>.
 
 - `/` — single-column home with intro, work carousel, live commit graph, experience, artifacts, experiments, bookshelf, elsewhere, plus a T-Rex game at the bottom.
 - `/work` — full work list with imagery (xaut.cool, pills.trade, Eido App, Genie DEX, plus sketches).
-- `/projects/choplab` — case study + working browser-based audio sampler (Web Audio + MediaRecorder, audio-reactive dithered visualizer).
 - `/stash` — curated sites worth seeing.
 - `/api/commits` — proxies `github.com/sarthakxv` public events into a 30-day commit graph.
 

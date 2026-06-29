@@ -181,6 +181,18 @@ h3 {
   to   { transform: translateY(100%); }
 }
 
+/* Fourier-traced wordmark: each glyph's path draws itself on, then holds.
+   pathLength is normalised to 1, so dashoffset animates 1 (hidden) -> 0 (drawn).
+   The global reduced-motion rule below snaps this to the finished letter. */
+@keyframes lissajous-draw {
+  to { stroke-dashoffset: 0; }
+}
+.lissajous-letter path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: lissajous-draw 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

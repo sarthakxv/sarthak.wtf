@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import { defineSound, ensureReady } from "@web-kits/audio";
 
 const MUTE_KEY = "sarthak.muted";
@@ -90,19 +90,19 @@ export function playClick(): void {
 
 // --- React hook ---------------------------------------------------------
 
-export function useMuted(): [boolean, (v: boolean) => void] {
-  const [muted, setMutedState] = useState<boolean>(false);
+function subscribeMuted(onChange: () => void): () => void {
+  window.addEventListener(MUTE_EVENT, onChange as EventListener);
+  window.addEventListener("storage", onChange);
+  return () => {
+    window.removeEventListener(MUTE_EVENT, onChange as EventListener);
+    window.removeEventListener("storage", onChange);
+  };
+}
 
-  useEffect(() => {
-    setMutedState(isMuted());
-    const onChange = () => setMutedState(isMuted());
-    window.addEventListener(MUTE_EVENT, onChange as EventListener);
-    window.addEventListener("storage", onChange);
-    return () => {
-      window.removeEventListener(MUTE_EVENT, onChange as EventListener);
-      window.removeEventListener("storage", onChange);
-    };
-  }, []);
+export function useMuted(): [boolean, (v: boolean) => void] {
+  // External store (localStorage + custom event); getServerSnapshot is false
+  // so SSR and first client render agree, then it syncs to the real value.
+  const muted = useSyncExternalStore(subscribeMuted, isMuted, () => false);
 
   const update = useCallback((v: boolean) => {
     setMuted(v);
