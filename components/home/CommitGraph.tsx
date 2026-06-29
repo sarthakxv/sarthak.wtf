@@ -73,9 +73,7 @@ export function CommitGraph() {
   const [offsets, setOffsets] = useState<number[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const fallbackRef = useRef<CommitDay[]>([]);
-  if (fallbackRef.current.length === 0) fallbackRef.current = buildDays();
-  const [days, setDays] = useState<CommitDay[]>(fallbackRef.current);
+  const [days, setDays] = useState<CommitDay[]>(() => buildDays());
   const [source, setSource] = useState<"fallback" | "github">("fallback");
 
   useEffect(() => {
