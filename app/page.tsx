@@ -96,7 +96,7 @@ export default function Home() {
           {/* 5. Experience */}
           <section className="fade-in mt-12" style={{ animationDelay: "150ms" }}>
             <SectionLabel>experience</SectionLabel>
-            <ul className="flex flex-col">
+            <ul className="focus-list flex flex-col">
               {experience.map((item) => (
                 <Row
                   key={item.role + (item.company ?? "")}
@@ -133,7 +133,7 @@ export default function Home() {
           {/* 6. Artifacts */}
           <section className="fade-in mt-12" style={{ animationDelay: "200ms" }}>
             <SectionLabel>artifacts</SectionLabel>
-            <ul className="flex flex-col">
+            <ul className="focus-list flex flex-col">
               {artifacts.map((item) => (
                 <Row
                   key={item.title}
@@ -151,7 +151,7 @@ export default function Home() {
           {/* 7. Experiments */}
           <section className="fade-in mt-12" style={{ animationDelay: "250ms" }}>
             <SectionLabel>experiments</SectionLabel>
-            <ul className="flex flex-col">
+            <ul className="focus-list flex flex-col">
               {experiments.map((item) => (
                 <Row
                   key={item.title}

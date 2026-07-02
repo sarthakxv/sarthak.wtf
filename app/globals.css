@@ -204,3 +204,19 @@ h3 {
   }
   .sunset-orb-a, .sunset-orb-b, .sunset-orb-c { animation: none !important; }
 }
+
+/* List focus: while a list is hovered, only the row under the cursor stays
+   crisp — siblings blur and dim. Leaving the list restores every row.
+   Scoped to hover-capable pointers so touch scrolling never triggers it. */
+@media (hover: hover) {
+  .focus-list > li {
+    transition:
+      filter 0.2s ease,
+      opacity 0.2s ease,
+      background-color 0.15s ease;
+  }
+  .focus-list:hover > li:not(:hover) {
+    filter: blur(2px);
+    opacity: 0.55;
+  }
+}
