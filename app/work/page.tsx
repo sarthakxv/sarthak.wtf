@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeftIcon, ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
+import { ZoomableImage } from "@/components/work/ZoomableImage";
 import work from "@/content/work.json";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function WorkPage() {
           href="/"
           className="inline-flex items-center gap-1.5 text-xs text-[color:var(--color-mid)] hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 rounded-sm transition-colors duration-150"
         >
-          <ArrowLeft size={14} weight="regular" aria-hidden />
+          <ArrowLeftIcon size={14} weight="regular" aria-hidden />
           back
         </Link>
 
@@ -52,15 +53,12 @@ export default function WorkPage() {
         <section className="mt-12 flex flex-col gap-12">
           {named.map((item) => (
             <article key={item.title} className="flex flex-col gap-3">
-              <div className="aspect-video rounded-[8px] overflow-hidden bg-neutral-100 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.04)]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover object-top"
-                  loading="lazy"
-                />
-              </div>
+              <ZoomableImage
+                src={item.image}
+                alt={item.title}
+                caption={item.title}
+                className="aspect-video rounded-[8px] bg-neutral-100 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.04)]"
+              />
               <div className="flex items-baseline justify-between gap-3 mt-1">
                 <h2 className="text-base font-semibold text-[color:var(--color-text)]">
                   {item.title}
@@ -83,7 +81,7 @@ export default function WorkPage() {
                   className="inline-flex items-center gap-1 self-start text-sm text-[color:var(--color-text)] underline decoration-dotted decoration-[color:var(--color-line)] underline-offset-[3px] hover:decoration-[color:var(--color-mid)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 rounded-sm"
                 >
                   Visit
-                  <ArrowUpRight size={12} weight="regular" aria-hidden />
+                  <ArrowUpRightIcon size={12} weight="regular" aria-hidden />
                 </a>
               )}
             </article>
@@ -101,18 +99,13 @@ export default function WorkPage() {
             </p>
             <div className="grid grid-cols-2 gap-3">
               {sketches.map((item) => (
-                <div
+                <ZoomableImage
                   key={item.title}
-                  className="aspect-video rounded-[6px] overflow-hidden bg-neutral-100"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover object-top hover:scale-[1.03] transition-transform duration-500 ease-out"
-                    loading="lazy"
-                  />
-                </div>
+                  src={item.image}
+                  alt={item.title}
+                  caption={item.title.replace(/^Sketch · /, "")}
+                  className="aspect-video rounded-[6px] bg-neutral-100"
+                />
               ))}
             </div>
           </section>
