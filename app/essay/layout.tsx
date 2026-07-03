@@ -36,11 +36,14 @@ export default function EssayLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="relative min-h-screen text-[color:var(--ink-fg)]">
+    <main
+      data-surface="paper"
+      className="relative min-h-screen bg-[color:var(--bg-base)] text-[color:var(--ink-fg)]"
+    >
       {/* Frosted top scrim over the clean reading surface. */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-x-0 top-0 z-10 h-14 bg-white/60 backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] [mask-image:linear-gradient(to_bottom,black,transparent)]"
+        className="pointer-events-none fixed inset-x-0 top-0 z-10 h-14 bg-[#faf9f6]/60 backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] [mask-image:linear-gradient(to_bottom,black,transparent)]"
       />
       <ScrollProgress
         className="fixed top-0 z-20 h-0.5 bg-[color:var(--color-accent)]"
@@ -64,7 +67,7 @@ export default function EssayLayout({
             fade-in prose max-w-none pt-8
             font-[family-name:var(--font-spectral)] text-[16px] leading-[1.75]
             prose-p:text-[color:var(--ink-mid)]
-            prose-headings:font-mono prose-headings:font-medium prose-headings:tracking-tight prose-headings:text-[color:var(--ink-fg)]
+            prose-headings:font-medium prose-headings:tracking-tight prose-headings:text-[color:var(--ink-fg)]
             prose-h1:text-3xl prose-h1:lowercase prose-h1:mb-2
             prose-h2:mt-12 prose-h2:text-lg prose-h2:scroll-mt-24
             prose-h3:mt-8 prose-h3:text-base
