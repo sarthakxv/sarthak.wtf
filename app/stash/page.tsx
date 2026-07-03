@@ -1,7 +1,7 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
+import { SoundLink } from "@/components/ui/SoundLink";
 import stash from "@/content/stash.json";
 
 export const metadata: Metadata = {
@@ -21,13 +21,15 @@ export default function StashPage() {
   return (
     <PageShell>
       <main className="max-w-2xl mx-auto px-5 sm:px-8 py-10">
-        <Link
+        <SoundLink
           href="/"
+          sound="click"
+          on="click"
           className="inline-flex items-center gap-1.5 text-xs text-[color:var(--color-mid)] hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 rounded-sm transition-colors duration-150"
         >
           <ArrowLeft size={14} weight="regular" aria-hidden />
           back
-        </Link>
+        </SoundLink>
 
         <header className="mt-8">
           <h1 className="text-2xl font-semibold tracking-tight text-[color:var(--color-text)]">

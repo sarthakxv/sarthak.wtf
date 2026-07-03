@@ -8,6 +8,7 @@ import { SoundToggle } from "@/components/home/SoundToggle";
 import { Footer } from "@/components/home/Footer";
 import { TRexGame } from "@/components/home/TRexGame";
 import { SimpleRow as Row } from "@/components/home/SimpleRow";
+import { SoundLink } from "@/components/ui/SoundLink";
 import { ScrambledText } from "@/components/ui/ScrambledText";
 // import photos from "@/content/photos.json";
 import work from "@/content/work.json";
@@ -48,14 +49,14 @@ export default function Home() {
             style={{ animationDelay: "30ms" }}
           >
             Founding Engineer / Head of Engineering @{" "}
-            <a
+            <SoundLink
               href="https://gold.fi"
               target="_blank"
               rel="noopener noreferrer"
               className={linkClass}
             >
               Gold.fi
-            </a>
+            </SoundLink>
           </p>
 
           {/* 3. Intro */}
@@ -68,23 +69,23 @@ export default function Home() {
             Ethereum. Frontend-heavy with full-stack depth, best where
             engineering and product decisions are the same conversation.
             Besides code, I degen or play poker —{" "}
-            <a
+            <SoundLink
               href="https://t.me/sarthakxv"
               target="_blank"
               rel="noopener noreferrer"
               className={linkClass}
             >
               drop on telegram
-            </a>{" "}
+            </SoundLink>{" "}
             or{" "}
-            <a
+            <SoundLink
               href="https://x.com/0xSarthak"
               target="_blank"
               rel="noopener noreferrer"
               className={linkClass}
             >
               reach me on X
-            </a>
+            </SoundLink>
             .
           </p>
 
@@ -180,21 +181,21 @@ export default function Home() {
               find me on{" "}
               {socials.profiles.map((profile, i) => (
                 <span key={profile.label}>
-                  <a
+                  <SoundLink
                     href={profile.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={linkClass}
                   >
                     {profile.label}
-                  </a>
+                  </SoundLink>
                   {i < socials.profiles.length - 1 ? ", " : ""}
                 </span>
               ))}
               , or reach me at{" "}
-              <a href={`mailto:${socials.email}`} className={linkClass}>
+              <SoundLink href={`mailto:${socials.email}`} className={linkClass}>
                 {socials.email}
-              </a>
+              </SoundLink>
               .
             </p>
           </section>

@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
+import { SoundLink } from "@/components/ui/SoundLink";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { Footer } from "@/components/home/Footer";
 
@@ -52,13 +52,15 @@ export default function EssayLayout({
 
       <div className="mx-auto max-w-2xl px-5 sm:px-8">
         <div className="flex items-center justify-between pt-8">
-          <Link
+          <SoundLink
             href="/"
+            sound="click"
+            on="click"
             className="inline-flex items-center gap-1.5 text-xs text-[color:var(--color-mid)] hover:text-[color:var(--color-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 rounded-sm transition-colors duration-150"
           >
             <ArrowLeft size={14} weight="regular" aria-hidden />
             back
-          </Link>
+          </SoundLink>
           <CopyLink />
         </div>
 
