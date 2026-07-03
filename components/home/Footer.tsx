@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useIndiaClock } from "@/hooks/useIndiaClock";
+import { ScrambledText } from "@/components/ui/ScrambledText";
 
 const LOOP_LINES = ["© {YEAR} Sarthak.", "stay curious and keep building."];
 const LOOP_MS = 3500;
@@ -33,8 +34,12 @@ export function Footer() {
       aria-label="Footer"
     >
       <TextLoop />
-      <span suppressHydrationWarning className="tabular-nums">
-        {time ? `${time} · india` : "india"}
+      <span suppressHydrationWarning className="font-departure tabular-nums">
+        {time ? (
+          <ScrambledText>{`${time} · india`}</ScrambledText>
+        ) : (
+          "india"
+        )}
       </span>
       <style jsx global>{`
         @keyframes footer-fade {

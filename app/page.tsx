@@ -8,6 +8,7 @@ import { SoundToggle } from "@/components/home/SoundToggle";
 import { Footer } from "@/components/home/Footer";
 import { TRexGame } from "@/components/home/TRexGame";
 import { SimpleRow as Row } from "@/components/home/SimpleRow";
+import { ScrambledText } from "@/components/ui/ScrambledText";
 // import photos from "@/content/photos.json";
 import work from "@/content/work.json";
 import experience from "@/content/experience.json";
@@ -124,7 +125,7 @@ export default function Home() {
                       )}
                     </>
                   }
-                  right={item.date}
+                  right={<ScrambledText className="font-departure text-xs">{item.date}</ScrambledText>}
                 />
               ))}
             </ul>
@@ -142,7 +143,7 @@ export default function Home() {
                       {item.title}
                     </a>
                   }
-                  right={item.date}
+                  right={<ScrambledText className="font-departure text-xs">{item.date}</ScrambledText>}
                 />
               ))}
             </ul>

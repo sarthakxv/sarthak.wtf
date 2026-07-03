@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import { Caveat, Pacifico, JetBrains_Mono, Spectral } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+// Departure Mono — pixel/terminal display face for the "machine voice":
+// dates, timestamps, numeric readouts and small meta labels. Not for code.
+const departureMono = localFont({
+  src: "../public/assets/DepartureMono-Regular.woff2",
+  weight: "400",
+  variable: "--font-departure-mono",
+  display: "swap",
+});
 
 const caveat = Caveat({
   subsets: ["latin"],
@@ -47,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${caveat.variable} ${pacifico.variable} ${jetbrains.variable} ${spectral.variable}`}
+      className={`${caveat.variable} ${pacifico.variable} ${jetbrains.variable} ${spectral.variable} ${departureMono.variable}`}
       data-style="default"
       data-bg="leaves"
     >

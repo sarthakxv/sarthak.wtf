@@ -385,7 +385,7 @@ export function TRexGame() {
           </div>
         )}
       </div>
-      <div className="flex items-center justify-between text-[10px] tracking-[0.16em] uppercase text-[color:var(--ink-soft)] font-mono">
+      <div className="flex items-center justify-between text-[10px] tracking-[0.16em] uppercase text-[color:var(--ink-soft)] font-departure">
         <span className="tabular-nums">hi {String(hi).padStart(5, "0")}</span>
         <span className="tabular-nums">{String(score).padStart(5, "0")}</span>
       </div>

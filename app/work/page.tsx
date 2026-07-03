@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ArrowLeftIcon, ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
 import { ZoomableImage } from "@/components/work/ZoomableImage";
+import { ScrambledText } from "@/components/ui/ScrambledText";
 import work from "@/content/work.json";
 
 export const metadata: Metadata = {
@@ -63,9 +64,9 @@ export default function WorkPage() {
                 <h2 className="text-base font-semibold text-[color:var(--color-text)]">
                   {item.title}
                 </h2>
-                <span className="text-xs text-[color:var(--color-mid)] tabular-nums shrink-0">
+                <ScrambledText className="font-departure text-xs text-[color:var(--color-mid)] tabular-nums shrink-0">
                   {item.period}
-                </span>
+                </ScrambledText>
               </div>
               <p className="text-xs text-[color:var(--color-mid)] -mt-2">
                 {item.role}
@@ -90,7 +91,7 @@ export default function WorkPage() {
 
         {sketches.length > 0 && (
           <section className="mt-16">
-            <h2 className="text-xs font-medium uppercase tracking-[0.08em] text-[color:var(--color-mid)] mb-4">
+            <h2 className="font-departure text-xs font-medium uppercase tracking-[0.08em] text-[color:var(--color-mid)] mb-4">
               Sketches
             </h2>
             <p className="text-sm leading-relaxed text-[color:var(--color-text)] mb-6">

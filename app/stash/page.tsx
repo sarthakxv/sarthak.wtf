@@ -44,7 +44,7 @@ export default function StashPage() {
 
         <p
           className="mt-4 text-xs uppercase tracking-[0.08em] text-[color:var(--color-mid)]"
-          style={{ fontFamily: "var(--font-mono)" }}
+          style={{ fontFamily: "var(--font-departure)" }}
         >
           updated {updated}
         </p>

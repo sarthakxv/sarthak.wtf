@@ -10,6 +10,7 @@
   --color-accent: #18181b;
   --font-sans: "SF Pro Rounded", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: var(--font-jetbrains), "SF Mono", ui-monospace, Menlo, monospace;
+  --font-departure: var(--font-departure-mono), "SF Mono", ui-monospace, Menlo, monospace;
   --font-handwritten: var(--font-caveat);
   --font-display: var(--font-pacifico);
   --breakpoint-desktop: 1024px;
@@ -57,6 +58,12 @@
   --ink-soft: #71717a;
 }
 
+/* Essay reading surface — warm paper: near-black ink on off-white. */
+[data-surface="paper"] {
+  --bg-base: #faf9f6;
+  --ink-fg: #1c1b1f;
+}
+
 html,
 body {
   background-color: var(--bg-base);
@@ -80,6 +87,11 @@ h3 {
 
 .font-mono {
   font-family: var(--font-mono);
+}
+
+/* Departure Mono — machine/terminal voice: dates, timestamps, meta labels. */
+.font-departure {
+  font-family: var(--font-departure);
 }
 
 .font-handwritten {
