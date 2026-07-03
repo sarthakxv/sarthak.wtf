@@ -88,6 +88,30 @@ export function playClick(): void {
   }
 }
 
+// Deliberate, user-triggered game sounds. Unlike the ambient tick these are
+// NOT silenced by prefers-reduced-motion (that's a motion preference, not an
+// audio one) — only the mute toggle mutes them.
+function makeSfx(src: string, volume: number) {
+  let el: HTMLAudioElement | null = null;
+  return () => {
+    if (typeof window === "undefined" || isMuted()) return;
+    try {
+      if (!el) {
+        el = new Audio(src);
+        el.preload = "auto";
+        el.volume = volume;
+      }
+      el.currentTime = 0;
+      void el.play();
+    } catch {
+      /* ignore */
+    }
+  };
+}
+
+export const playJump = makeSfx("/sounds/jump.mp3", 0.35);
+export const playDie = makeSfx("/sounds/die.mp3", 0.4);
+
 // --- React hook ---------------------------------------------------------
 
 function subscribeMuted(onChange: () => void): () => void {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { playJump, playDie } from "@/lib/sound";
 
 // Canvas T-Rex runner — Chrome's offline dino game, minimal port.
 // Internal canvas resolution stays small (640×160) and CSS scales it up
@@ -143,6 +144,7 @@ export function TRexGame() {
       }
       if (dino.y >= GROUND_Y && !duck) {
         dino.vy = JUMP_VEL;
+        playJump();
       }
     };
 
@@ -236,6 +238,7 @@ export function TRexGame() {
             dinoBox.y + dinoBox.h > cBox.y + 2
           ) {
             // collision
+            playDie();
             const final = Math.floor(distance / 5);
             setState("over");
             setScore(final);
