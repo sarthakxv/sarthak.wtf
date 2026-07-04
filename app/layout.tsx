@@ -1,46 +1,6 @@
 import type { Metadata } from "next";
-import { Caveat, Pacifico, JetBrains_Mono, Spectral } from "next/font/google";
-import localFont from "next/font/local";
+import { caveat, pacifico, jetbrains, spectral, departureMono } from "@/lib/fonts";
 import "./globals.css";
-
-// Departure Mono — pixel/terminal display face for the "machine voice":
-// dates, timestamps, numeric readouts and small meta labels. Not for code.
-const departureMono = localFont({
-  src: "../public/assets/DepartureMono-Regular.woff2",
-  weight: "400",
-  variable: "--font-departure-mono",
-  display: "swap",
-});
-
-const caveat = Caveat({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-caveat",
-  display: "swap",
-});
-
-const pacifico = Pacifico({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-pacifico",
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-jetbrains",
-  display: "swap",
-});
-
-// Reading serif for long-form essays (app/essay/**).
-const spectral = Spectral({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-spectral",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sarthak.dev"),
