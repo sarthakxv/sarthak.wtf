@@ -4,6 +4,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { ZoomableImage } from "@/components/work/ZoomableImage";
 import { ScrambledText } from "@/components/ui/ScrambledText";
 import { SoundLink } from "@/components/ui/SoundLink";
+import { Footer } from "@/components/home/Footer";
 import work from "@/content/work.json";
 
 export const metadata: Metadata = {
@@ -113,6 +114,8 @@ export default function WorkPage() {
             </div>
           </section>
         )}
+
+        <Footer />
       </main>
     </PageShell>
   );

@@ -30,7 +30,7 @@ export function Footer() {
   const time = useIndiaClock();
   return (
     <footer
-      className="mt-24 border-t border-[color:var(--color-line)] py-4 flex items-center justify-between text-xs text-[color:var(--color-mid)]"
+      className="mt-24 border-t border-(--color-line) py-4 flex items-center justify-between text-xs text-(--color-mid)"
       aria-label="Footer"
     >
       <TextLoop />

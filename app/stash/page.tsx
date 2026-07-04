@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
 import { SoundLink } from "@/components/ui/SoundLink";
+import { Footer } from "@/components/home/Footer";
 import stash from "@/content/stash.json";
 
 export const metadata: Metadata = {
@@ -82,6 +83,8 @@ export default function StashPage() {
           </a>
           .
         </p>
+
+        <Footer />
       </main>
     </PageShell>
   );
