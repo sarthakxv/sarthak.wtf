@@ -165,6 +165,10 @@ export default function Home() {
                   }
                 />
               ))}
+              <Row
+                left={<span className="text-[color:var(--ink-fg)]">curated supply</span>}
+                right={<SoundLink href="/curated" sound="click" on="click" className={linkClass}>view</SoundLink>}
+              />
             </ul>
           </section>
 
