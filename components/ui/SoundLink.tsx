@@ -15,6 +15,8 @@ type SoundLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   sound?: SoundName;
   /** Which interaction fires the sound. Defaults to "hover". */
   on?: "hover" | "click";
+  /** Scroll behavior for next/link. */
+  scroll?: boolean;
 };
 
 /**
