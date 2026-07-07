@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gen-depth": "node scripts/gen-depth.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -37,5 +38,8 @@
     "sharp": "^0.35.3",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["sharp", "onnxruntime-node"]
   }
 }
