@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
 import { SoundLink } from "@/components/ui/SoundLink";
+import { ScrambledText } from "@/components/ui/ScrambledText";
 import { Footer } from "@/components/home/Footer";
 import stash from "@/content/stash.json";
 
@@ -49,13 +50,13 @@ export default function StashPage() {
           className="mt-4 text-xs uppercase tracking-[0.08em] text-[color:var(--color-mid)]"
           style={{ fontFamily: "var(--font-departure)" }}
         >
-          updated {updated}
+          updated <ScrambledText>{updated}</ScrambledText>
         </p>
 
         <ul className="mt-8 flex flex-col gap-2">
           {links.map((l) => (
             <li key={l.href} className="text-sm leading-relaxed">
-              <a
+              <SoundLink
                 href={l.href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -63,7 +64,7 @@ export default function StashPage() {
               >
                 {l.label}
                 <ArrowUpRight size={10} weight="regular" aria-hidden className="translate-y-[-1px]" />
-              </a>
+              </SoundLink>
               {l.note && (
                 <span className="ml-2 text-[color:var(--color-mid)]">— {l.note}</span>
               )}
@@ -73,14 +74,14 @@ export default function StashPage() {
 
         <p className="mt-10 text-xs text-[color:var(--color-mid)]">
           pattern borrowed from{" "}
-          <a
+          <SoundLink
             href="https://dris.one/resources/portfolios"
             target="_blank"
             rel="noopener noreferrer"
             className="underline decoration-dotted decoration-[color:var(--color-line)] underline-offset-[3px] hover:text-[color:var(--color-text)]"
           >
             dris&rsquo;s portfolios list
-          </a>
+          </SoundLink>
           .
         </p>
 
