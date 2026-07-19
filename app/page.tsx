@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
 import { LissajousName } from "@/components/home/LissajousName";
 // import { Polaroids, type Photo } from "@/components/home/Polaroids";
@@ -13,7 +14,7 @@ import { ScrambledText } from "@/components/ui/ScrambledText";
 // import photos from "@/content/photos.json";
 import work from "@/content/work.json";
 import experience from "@/content/experience.json";
-import artifacts from "@/content/artifacts.json";
+import { essays } from "@/content/essays";
 import experiments from "@/content/experiments.json";
 import socials from "@/content/socials.json";
 
@@ -68,7 +69,8 @@ export default function Home() {
             products from 0→1 — RWA perps, DEXes, and now tokenized gold on
             Ethereum. Frontend-heavy with full-stack depth, best where
             engineering and product decisions are the same conversation.
-            Besides code, I degen or play poker —{" "}
+            <br />
+            Besides code, I degen or play poker: {" "}
             <SoundLink
               href="https://t.me/sarthakxv"
               target="_blank"
@@ -132,19 +134,29 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* 6. Artifacts */}
+          {/* 6. Artifacts — writing; label links to the full essays index */}
           <section className="fade-in mt-12" style={{ animationDelay: "200ms" }}>
-            <SectionLabel>artifacts</SectionLabel>
+            <h2 className="font-handwritten text-lg text-[color:var(--ink-soft)] mb-3 lowercase">
+              <SoundLink
+                href="/essay"
+                sound="click"
+                on="click"
+                className="inline-flex items-center gap-1 hover:text-[color:var(--ink-mid)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 rounded-sm"
+              >
+                artifacts
+                <ArrowUpRightIcon size={13} weight="regular" aria-hidden className="translate-y-[1px]" />
+              </SoundLink>
+            </h2>
             <ul className="focus-list flex flex-col">
-              {artifacts.map((item) => (
+              {essays.map((essay) => (
                 <Row
-                  key={item.title}
+                  key={essay.slug}
                   left={
-                    <a href={item.href} className={linkClass}>
-                      {item.title}
+                    <a href={essay.href} className={linkClass}>
+                      {essay.title}
                     </a>
                   }
-                  right={<ScrambledText className="font-departure text-xs">{item.date}</ScrambledText>}
+                  right={<ScrambledText className="font-departure text-xs">{essay.year}</ScrambledText>}
                 />
               ))}
             </ul>
@@ -165,6 +177,10 @@ export default function Home() {
                   }
                 />
               ))}
+              <Row
+                left={<span className="text-[color:var(--ink-fg)]">curated supply</span>}
+                right={<SoundLink href="/curated" sound="click" on="click" className={linkClass}>view</SoundLink>}
+              />
             </ul>
           </section>
 

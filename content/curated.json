@@ -1,0 +1,22 @@
+[
+  {
+    "code": "001",
+    "slug": "leica-m6",
+    "name": "LEICA M6",
+    "maker": "Leica",
+    "material": "brass, vulcanite",
+    "category": "camera",
+    "acquired": "2019",
+    "image": "/curated/leica-m6.png"
+  },
+  {
+    "code": "002",
+    "slug": "rimowa-original",
+    "name": "RIMOWA ORIGINAL",
+    "maker": "Rimowa",
+    "material": "anodised aluminium",
+    "category": "travel",
+    "acquired": "2020",
+    "image": "/curated/rimowa-original.png"
+  }
+]
