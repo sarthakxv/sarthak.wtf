@@ -205,6 +205,21 @@ h3 {
   animation: lissajous-draw 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
+/* Signature wordmark: each stroke draws itself on, then holds.
+   pathLength is normalised to 1, so dashoffset animates 1 (hidden) -> 0 (drawn).
+   Per-stroke duration/delay are set inline by SignatureName.tsx.
+   The global reduced-motion rule below snaps this to the finished signature. */
+@keyframes signature-draw {
+  to { stroke-dashoffset: 0; }
+}
+.signature-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation-name: signature-draw;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-fill-mode: forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
