@@ -193,19 +193,26 @@ h3 {
   to   { transform: translateY(100%); }
 }
 
-/* Signature wordmark: each stroke draws itself on, then holds.
+/* Signature wordmark: each stroke's outline draws itself on, then its ink
+   floods in (the paths are filled ink outlines — fill is the finished look).
    pathLength is normalised to 1, so dashoffset animates 1 (hidden) -> 0 (drawn).
-   Per-stroke duration/delay are set inline by SignatureName.tsx.
-   The global reduced-motion rule below snaps this to the finished signature. */
+   Per-stroke durations/delays for both animations are set inline by
+   SignatureName.tsx. The global reduced-motion rule below snaps this to the
+   finished, fully inked signature. */
 @keyframes signature-draw {
   to { stroke-dashoffset: 0; }
 }
+@keyframes signature-fill {
+  to { fill-opacity: 1; }
+}
 .signature-path {
+  fill: currentColor;
+  fill-opacity: 0;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation-name: signature-draw;
-  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
-  animation-fill-mode: forwards;
+  animation-name: signature-draw, signature-fill;
+  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95), ease-out;
+  animation-fill-mode: forwards, forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {

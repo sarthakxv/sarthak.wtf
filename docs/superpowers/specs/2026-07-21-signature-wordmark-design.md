@@ -14,9 +14,10 @@ signature tool.
 
 `~/downloads/sarthak.svg` — a signature export containing 4 `<path>` elements
 inside `viewBox="283.042 234.317 539.539 141.639"` (~3.8:1 aspect). The paths
-are variable-width filled ink outlines. Per the approved direction, they are
-rendered **monoline**: `fill="none"`, `stroke="currentColor"`, thin stroke —
-matching the site's existing thin-stroke aesthetic and adapting to theme
+are variable-width filled ink outlines. Per the revised direction (2026-07-21),
+they are rendered **filled ink**: a thin `stroke="currentColor"` outline traces
+each stroke on, then `fill: currentColor` floods in as the stroke completes —
+matching the original signature's solid-ink look and adapting to theme
 automatically.
 
 The file is moved into the repo at `public/assets/sarthak-signature.svg` as the

@@ -4,7 +4,9 @@ import { useState } from "react";
 import { SIGNATURE_PATHS, SIGNATURE_VIEWBOX } from "./signaturePaths";
 
 /**
- * The signature's four strokes, drawn on in sequence like live handwriting.
+ * The signature's four strokes, drawn on in sequence like live handwriting;
+ * as each stroke's outline finishes tracing, its ink floods in (the paths
+ * are filled ink outlines, so fill — not stroke — is the finished look).
  * WEIGHTS are each stroke's share of the total arc length (precomputed from
  * the path data; they sum to 1), so long strokes take proportionally longer
  * and each stroke starts as the previous one ends.
@@ -14,6 +16,8 @@ import { SIGNATURE_PATHS, SIGNATURE_VIEWBOX } from "./signaturePaths";
 const WEIGHTS = [0.188, 0.309, 0.497, 0.006];
 const TOTAL_DRAW_S = 1.8;
 const MIN_DRAW_S = 0.08; // floor so the final i-dot registers as a stroke
+const FILL_FADE_S = 0.4; // ink flood-in once a stroke is mostly traced
+const FILL_START = 0.7; // fill begins at this fraction of the stroke's draw
 
 // viewBox is "minX minY width height" — width/height set the aspect ratio.
 const [, , VB_W, VB_H] = SIGNATURE_VIEWBOX.split(" ").map(Number);
@@ -35,11 +39,11 @@ export function SignatureName({ height = 56 }: { height?: number }) {
         width={(height * VB_W) / VB_H}
         height={height}
         viewBox={SIGNATURE_VIEWBOX}
-        fill="none"
         stroke="currentColor"
-        strokeWidth={1.4}
+        strokeWidth={1}
         strokeLinecap="round"
         strokeLinejoin="round"
+        shapeRendering="geometricPrecision"
         aria-hidden
       >
         {SIGNATURE_PATHS.map((d, i) => {
@@ -54,8 +58,8 @@ export function SignatureName({ height = 56 }: { height?: number }) {
               vectorEffect="non-scaling-stroke"
               className="signature-path"
               style={{
-                animationDuration: `${duration}s`,
-                animationDelay: `${delay}s`,
+                animationDuration: `${duration}s, ${FILL_FADE_S}s`,
+                animationDelay: `${delay}s, ${delay + duration * FILL_START}s`,
               }}
             />
           );
