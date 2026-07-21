@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
-import { LissajousName } from "@/components/home/LissajousName";
+import { SignatureName } from "@/components/home/SignatureName";
 // import { Polaroids, type Photo } from "@/components/home/Polaroids";
 import { WorkCarousel, type WorkItem } from "@/components/home/WorkCarousel";
 import { CommitGraph } from "@/components/home/CommitGraph";
@@ -39,9 +39,9 @@ export default function Home() {
       <SoundToggle />
       <main className="relative min-h-screen text-[color:var(--ink-fg)]">
         <div className="max-w-xl mx-auto px-6 py-16">
-          {/* 1. Wordmark — name spelled as Lissajous curves */}
+          {/* 1. Wordmark — signature drawn on like live handwriting */}
           <div className="fade-in text-[color:var(--ink-fg)]" style={{ animationDelay: "0ms" }}>
-            <LissajousName name="SARTHAK" size={40} gap={8} />
+            <SignatureName />
           </div>
 
           {/* 2. Subheading — role line under the name */}
