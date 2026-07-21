@@ -37,7 +37,7 @@ All content lives under `content/*.json` (work, bookshelf, stash) or as hardcode
 ## Notes
 
 - Dappled-light overlay is a looping muted MP4 (`public/leaves.mp4`) with `mix-blend-mode: multiply`.
-- Lissajous wordmark animates via `requestAnimationFrame`; hovers speed up the phase and dim the trailing letters.
+- Signature wordmark (`SignatureName`) draws the SVG strokes on with chained `stroke-dashoffset` animations, paced by each stroke's arc length; hovering replays it.
 - Bookshelf is a 3D CSS port of the grizz.fyi technique — closed spines rotate 90° around their left edge; click to open.
 - Sound toggle (bottom-left) persists in `localStorage["sarthak.muted"]`.
 - T-Rex high score persists in `localStorage["sarthak.dino.hi"]`.

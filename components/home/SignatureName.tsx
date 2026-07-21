@@ -8,6 +8,8 @@ import { SIGNATURE_PATHS, SIGNATURE_VIEWBOX } from "./signaturePaths";
  * WEIGHTS are each stroke's share of the total arc length (precomputed from
  * the path data; they sum to 1), so long strokes take proportionally longer
  * and each stroke starts as the previous one ends.
+ * WEIGHTS must stay in sync with SIGNATURE_PATHS; unknown strokes fall back
+ * to the MIN_DRAW_S floor.
  */
 const WEIGHTS = [0.188, 0.309, 0.497, 0.006];
 const TOTAL_DRAW_S = 1.8;
@@ -41,7 +43,7 @@ export function SignatureName({ height = 56 }: { height?: number }) {
         aria-hidden
       >
         {SIGNATURE_PATHS.map((d, i) => {
-          const duration = Math.max(WEIGHTS[i] * TOTAL_DRAW_S, MIN_DRAW_S);
+          const duration = Math.max((WEIGHTS[i] ?? 0) * TOTAL_DRAW_S, MIN_DRAW_S);
           const delay = elapsed;
           elapsed += duration;
           return (
