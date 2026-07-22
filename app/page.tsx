@@ -58,6 +58,18 @@ export default function Home() {
             >
               Gold.fi
             </SoundLink>
+            {" · "}
+            <SoundLink
+              href="https://drive.google.com/file/d/1jBC6_BoWhnsZi57PECc8HbKDHWHQL_Vd/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              sound="click"
+              on="click"
+              className={`inline-flex items-center gap-0.5 ${linkClass}`}
+            >
+              resume
+              <ArrowUpRightIcon size={11} weight="regular" aria-hidden className="translate-y-[1px]" />
+            </SoundLink>
           </p>
 
           {/* 3. Intro */}
@@ -69,24 +81,26 @@ export default function Home() {
             products from 0→1 — RWA perps, DEXes, and now tokenized gold on
             Ethereum. Frontend-heavy with full-stack depth, best where
             engineering and product decisions are the same conversation.
-            <br />
-            Besides code, I degen or play poker: {" "}
+            <br /><br />
+            Besides code, I degen or play poker while looking for the next role.
+            <br /><br />
+            Reach out via{" "}
             <SoundLink
               href="https://t.me/sarthakxv"
               target="_blank"
               rel="noopener noreferrer"
               className={linkClass}
             >
-              drop on telegram
+              telegram
             </SoundLink>{" "}
-            or{" "}
+            or dm on{" "}
             <SoundLink
               href="https://x.com/0xSarthak"
               target="_blank"
               rel="noopener noreferrer"
               className={linkClass}
             >
-              reach me on X
+              X
             </SoundLink>
             .
           </p>
@@ -97,9 +111,9 @@ export default function Home() {
             <CommitGraph />
           </div>
 
-          {/* 5. Experience */}
+          {/* 5. Teams */}
           <section className="fade-in mt-12" style={{ animationDelay: "150ms" }}>
-            <SectionLabel>experience</SectionLabel>
+            <SectionLabel>teams</SectionLabel>
             <ul className="focus-list flex flex-col">
               {experience.map((item) => (
                 <Row
@@ -134,36 +148,8 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* 6. Artifacts — writing; label links to the full essays index */}
+          {/* 6. Experiments */}
           <section className="fade-in mt-12" style={{ animationDelay: "200ms" }}>
-            <h2 className="font-handwritten text-lg text-[color:var(--ink-soft)] mb-3 lowercase">
-              <SoundLink
-                href="/essay"
-                sound="click"
-                on="click"
-                className="inline-flex items-center gap-1 hover:text-[color:var(--ink-mid)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 rounded-sm"
-              >
-                artifacts
-                <ArrowUpRightIcon size={13} weight="regular" aria-hidden className="translate-y-[1px]" />
-              </SoundLink>
-            </h2>
-            <ul className="focus-list flex flex-col">
-              {essays.map((essay) => (
-                <Row
-                  key={essay.slug}
-                  left={
-                    <a href={essay.href} className={linkClass}>
-                      {essay.title}
-                    </a>
-                  }
-                  right={<ScrambledText className="font-departure text-xs">{essay.year}</ScrambledText>}
-                />
-              ))}
-            </ul>
-          </section>
-
-          {/* 7. Experiments */}
-          <section className="fade-in mt-12" style={{ animationDelay: "250ms" }}>
             <SectionLabel>experiments</SectionLabel>
             <ul className="focus-list flex flex-col">
               {experiments.map((item) => (
@@ -181,6 +167,34 @@ export default function Home() {
                 left={<span className="text-[color:var(--ink-fg)]">curated supply</span>}
                 right={<SoundLink href="/curated" sound="click" on="click" className={linkClass}>view</SoundLink>}
               />
+            </ul>
+          </section>
+
+          {/* 7. Writing — label links to the full essays index */}
+          <section className="fade-in mt-12" style={{ animationDelay: "250ms" }}>
+            <h2 className="font-handwritten text-lg text-[color:var(--ink-soft)] mb-3 lowercase">
+              <SoundLink
+                href="/writing"
+                sound="click"
+                on="click"
+                className="inline-flex items-center gap-1 hover:text-[color:var(--ink-mid)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 rounded-sm"
+              >
+                writing
+                <ArrowUpRightIcon size={13} weight="regular" aria-hidden className="translate-y-[1px]" />
+              </SoundLink>
+            </h2>
+            <ul className="focus-list flex flex-col">
+              {essays.map((essay) => (
+                <Row
+                  key={essay.slug}
+                  left={
+                    <a href={essay.href} className={linkClass}>
+                      {essay.title}
+                    </a>
+                  }
+                  right={<ScrambledText className="font-departure text-xs">{essay.year}</ScrambledText>}
+                />
+              ))}
             </ul>
           </section>
 

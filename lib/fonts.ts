@@ -31,7 +31,7 @@ export const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-// Reading serif for long-form essays (app/essay/**).
+// Reading serif for long-form essays (app/writing/**).
 export const spectral = Spectral({
   subsets: ["latin"],
   weight: ["400", "500", "600"],

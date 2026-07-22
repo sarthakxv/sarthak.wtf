@@ -1,12 +1,12 @@
-// Single source of truth for the essays index and the homepage "artifacts"
+// Single source of truth for the essays index and the homepage "writing"
 // section. Each essay's title/description/date lives once, in its MDX
 // `export const metadata` — this registry just imports that object and pairs it
 // with the route slug. To publish a new essay: add its page.mdx under
-// app/essay/(post)/<slug>/, then add one line to `registry` below.
+// app/writing/(post)/<slug>/, then add one line to `registry` below.
 //
 // MDX modules are only typed for their default (content) export, so the named
 // `metadata` export is read via a namespace import and a narrow cast.
-import * as perpification from "@/app/essay/(post)/perpification-of-everything/page.mdx";
+import * as perpification from "@/app/writing/(post)/perpification-of-everything/page.mdx";
 
 type EssayMeta = {
   title?: string;
@@ -36,7 +36,7 @@ const registry: { slug: string; meta: EssayMeta }[] = [
 export const essays: Essay[] = registry
   .map(({ slug, meta }) => ({
     slug,
-    href: `/essay/${slug}`,
+    href: `/writing/${slug}`,
     title: meta.title ?? slug,
     description: meta.description ?? "",
     date: meta.date ?? "",

@@ -30,7 +30,7 @@ function CopyLink() {
   );
 }
 
-export default function EssayLayout({
+export default function WritingLayout({
   children,
 }: {
   children: React.ReactNode;

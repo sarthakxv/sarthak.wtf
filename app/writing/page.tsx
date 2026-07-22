@@ -7,11 +7,11 @@ import { Footer } from "@/components/home/Footer";
 import { essays } from "@/content/essays";
 
 export const metadata: Metadata = {
-  title: "Essays - Sarthak Verma",
+  title: "Writing - Sarthak Verma",
   description: "Long-form writing on markets, DeFi, and building.",
 };
 
-export default function EssayIndexPage() {
+export default function WritingIndexPage() {
   return (
     <PageShell>
       <main className="max-w-2xl mx-auto px-5 sm:px-8 py-10">
@@ -27,7 +27,7 @@ export default function EssayIndexPage() {
 
         <header className="mt-8">
           <h1 className="text-2xl font-semibold tracking-tight text-[color:var(--color-text)]">
-            Essays
+            Writing
           </h1>
           <p className="mt-2 text-sm text-[color:var(--color-mid)]">
             Long-form notes on markets, DeFi, and building.
