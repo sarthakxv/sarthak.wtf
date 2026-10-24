@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { playJump, playDie } from "@/lib/sound";
 
-// Canvas T-Rex runner — Chrome's offline dino game, minimal port.
+// Canvas T-Rex runner: Chrome's offline dino game, minimal port.
 // Internal canvas resolution stays small (640×160) and CSS scales it up
 // so pixels look chunky and the frame budget is trivial.
 
@@ -12,7 +12,7 @@ const H = 160;
 const GROUND_Y = 130;
 const GRAVITY = 0.45;
 const JUMP_VEL = -9;
-// Releasing jump early truncates upward velocity to this — enables short hops
+// Releasing jump early truncates upward velocity to this: enables short hops
 const DROP_VEL = -4;
 // Pressing down mid-air slams the dino back to the ground at this velocity
 const SLAM_VEL = 6;
@@ -211,7 +211,7 @@ export function TRexGame() {
         distance += speed * dt;
         setScore(Math.floor(distance / 5));
 
-        // spawn obstacles — never during the intro strip expansion
+        // spawn obstacles: never during the intro strip expansion
         sinceSpawn += speed * dt;
         if (introT >= INTRO_FRAMES && sinceSpawn > nextGap) {
           spawn();
@@ -256,7 +256,7 @@ export function TRexGame() {
         }
       }
 
-      // render — clipped to a narrow strip until the intro expansion finishes
+      // render: clipped to a narrow strip until the intro expansion finishes
       ctx.clearRect(0, 0, W, H);
       const introP = introStarted ? Math.min(introT / INTRO_FRAMES, 1) : 0;
       const viewW = 80 + (W - 80) * (1 - Math.pow(1 - introP, 3));
@@ -281,7 +281,7 @@ export function TRexGame() {
           ctx.fillRect(o.x - 3, o.yTop + 6, 3, Math.min(o.h - 8, 10));
           ctx.fillRect(o.x + o.w, o.yTop + 4, 3, Math.min(o.h - 8, 10));
         } else {
-          // pterodactyl — body, head, beak, two-frame wing flap
+          // pterodactyl: body, head, beak, two-frame wing flap
           const wingUp = Math.floor(o.flap / 10) % 2 === 0;
           ctx.fillRect(o.x, o.yTop + 4, 15, 4);
           ctx.fillRect(o.x + 13, o.yTop + 2, 6, 3);
@@ -294,7 +294,7 @@ export function TRexGame() {
         }
       }
 
-      // dino — chunky rectangle silhouette; low long pose while ducking
+      // dino: chunky rectangle silhouette; low long pose while ducking
       ctx.fillStyle = "#3f3f3f";
       const dx = 40;
       const legFrame = Math.floor(frame / 6) % 2 === 0;
@@ -328,7 +328,7 @@ export function TRexGame() {
         ctx.fillStyle = "#fff";
         ctx.fillRect(dx + 20, dy + 3, 2, 2);
         ctx.fillStyle = "#3f3f3f";
-        // legs — animate while running
+        // legs: animate while running
         if (running && legFrame) {
           ctx.fillRect(dx + 2, dy + 22, 5, 4);
           ctx.fillRect(dx + 12, dy + 22, 5, 2);

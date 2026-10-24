@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { ArrowLeftIcon } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
 import { SoundLink } from "@/components/ui/SoundLink";
@@ -6,10 +7,11 @@ import { ScrambledText } from "@/components/ui/ScrambledText";
 import { Footer } from "@/components/home/Footer";
 import { essays } from "@/content/essays";
 
-export const metadata: Metadata = {
-  title: "Writing - Sarthak Verma",
-  description: "Long-form writing on markets, DeFi, and building.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Writing | Sarthak Verma",
+  description: "I write about markets, DeFi, and building products.",
+  path: "/writing",
+});
 
 export default function WritingIndexPage() {
   return (
@@ -30,7 +32,7 @@ export default function WritingIndexPage() {
             Writing
           </h1>
           <p className="mt-2 text-sm text-[color:var(--color-mid)]">
-            Long-form notes on markets, DeFi, and building.
+            I write about markets, DeFi, and building products.
           </p>
         </header>
 

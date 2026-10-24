@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 const USERNAME = "sarthakxv";
 
-export const revalidate = 1800; // 30 minutes — keep GitHub rate-limit happy
+export const revalidate = 1800; // 30 minutes: keep GitHub rate-limit happy
 
 type Day = { date: string; count: number; topRepo: string | null };
 

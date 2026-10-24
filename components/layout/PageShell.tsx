@@ -7,7 +7,7 @@ export function PageShell({ children }: { children: ReactNode }) {
       <LeavesScene />
       <div className="relative z-10 w-full">{children}</div>
 
-      {/* Bottom fade — frosted-glass scrim. */}
+      {/* Bottom fade: frosted-glass scrim. */}
       <div
         aria-hidden
         className="pointer-events-none fixed inset-x-0 bottom-0 z-20 h-24"

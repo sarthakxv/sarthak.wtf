@@ -10,7 +10,7 @@ export function SoundToggle() {
     const next = !muted;
     setMuted(next);
     if (!next) {
-      // unmuting — give one tick of feedback
+      // unmuting: give one tick of feedback
       // setMuted dispatches event; next tick playTick reads fresh state
       requestAnimationFrame(() => playTick());
     }

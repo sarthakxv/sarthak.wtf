@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { ArrowLeftIcon, ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
 import { ZoomableImage } from "@/components/work/ZoomableImage";
@@ -7,10 +8,11 @@ import { SoundLink } from "@/components/ui/SoundLink";
 import { Footer } from "@/components/home/Footer";
 import work from "@/content/work.json";
 
-export const metadata: Metadata = {
-  title: "Work — Sarthak Verma",
-  description: "Selected work, sketches, and explorations.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Work | Sarthak Verma",
+  description: "Selected work, sketches, and explorations",
+  path: "/work",
+});
 
 type WorkItem = {
   title: string;
@@ -44,14 +46,14 @@ export default function WorkPage() {
             Work
           </h1>
           <p className="mt-2 text-base text-[color:var(--color-mid)]">
-            What I&rsquo;ve been shipping.
+            Projects I&rsquo;ve built.
           </p>
         </header>
 
         <p className="mt-6 text-sm leading-relaxed text-[color:var(--color-text)]">
-          A few of the projects I&rsquo;ve led or built — most are crypto-adjacent,
-          some are side bets, and a handful are sketches that didn&rsquo;t make
-          it past Friday night. Click a link to dig deeper where one exists.
+          I&rsquo;ve built DeFi and AI products, led engineering teams, and
+          worked on side projects. You can find those projects and my UI
+          sketches below.
         </p>
 
         <section className="mt-12 flex flex-col gap-12">
@@ -98,8 +100,7 @@ export default function WorkPage() {
               Sketches
             </h2>
             <p className="text-sm leading-relaxed text-[color:var(--color-text)] mb-6">
-              Loose explorations — UI fragments, mid-build screenshots, things
-              I made and then walked away from.
+              UI ideas and screenshots from projects I set aside.
             </p>
             <div className="grid grid-cols-2 gap-3">
               {sketches.map((item) => (

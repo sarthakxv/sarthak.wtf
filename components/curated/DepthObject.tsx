@@ -11,7 +11,7 @@ import { depthSrc, normalSrc } from "@/lib/curated";
  * Track the pointer at the WINDOW level (normalized to -1..1), independent of
  * the R3F canvas's own pointer. The canvas layer is `pointer-events-none` so
  * list links stay clickable, which means `useThree().pointer` would never
- * update — hence this hook instead.
+ * update: hence this hook instead.
  */
 function useWindowPointer() {
   const ref = useRef({ x: 0, y: 0 });

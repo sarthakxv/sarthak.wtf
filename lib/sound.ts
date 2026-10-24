@@ -41,7 +41,7 @@ const tickVoice = defineSound({
   gain: 0.06,
 });
 
-// Click: a soft "pebble drop" — quick sine fall from mid-high to a low,
+// Click: a soft "pebble drop": quick sine fall from mid-high to a low,
 // short tail. Tuned to sit well under the eye: distinctly tactile but
 // not chirpy. Lower gain than tick so repeated clicks don't fatigue.
 const clickVoice = defineSound({
@@ -90,7 +90,7 @@ export function playClick(): void {
 
 // Deliberate, user-triggered game sounds. Unlike the ambient tick these are
 // NOT silenced by prefers-reduced-motion (that's a motion preference, not an
-// audio one) — only the mute toggle mutes them.
+// audio one): only the mute toggle mutes them.
 function makeSfx(src: string, volume: number) {
   let el: HTMLAudioElement | null = null;
   return () => {

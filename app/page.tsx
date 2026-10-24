@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { pageMetadata, siteDescription } from "@/lib/metadata";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
 import { SignatureName } from "@/components/home/SignatureName";
@@ -21,6 +22,12 @@ import socials from "@/content/socials.json";
 // const photoItems = photos as Photo[];
 const workItems = work as WorkItem[];
 
+export const metadata = pageMetadata({
+  title: "Sarthak Verma",
+  description: siteDescription,
+  path: "/",
+});
+
 const linkClass =
   "underline decoration-dotted decoration-current/30 underline-offset-4 text-[color:var(--ink-fg)] hover:decoration-current/60 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 rounded-sm";
 
@@ -38,18 +45,19 @@ export default function Home() {
     <PageShell>
       <SoundToggle />
       <main className="relative min-h-screen text-[color:var(--ink-fg)]">
+        <h1 className="sr-only">Sarthak Verma</h1>
         <div className="max-w-xl mx-auto px-6 py-16">
-          {/* 1. Wordmark — signature drawn on like live handwriting */}
+          {/* 1. Wordmark: signature drawn on like live handwriting */}
           <div className="fade-in text-[color:var(--ink-fg)]" style={{ animationDelay: "0ms" }}>
             <SignatureName />
           </div>
 
-          {/* 2. Subheading — role line under the name */}
+          {/* 2. Subheading: role line under the name */}
           <p
             className="fade-in mt-3 text-sm text-[color:var(--ink-soft)]"
             style={{ animationDelay: "30ms" }}
           >
-            Founding Engineer / Head of Engineering @{" "}
+            Previously Founding Engineer / Head of Engineering @{" "}
             <SoundLink
               href="https://gold.fi"
               target="_blank"
@@ -77,12 +85,13 @@ export default function Home() {
             className="fade-in mt-6 text-sm leading-relaxed text-[color:var(--ink-mid)]"
             style={{ animationDelay: "50ms" }}
           >
-            Senior engineer and ex-founder, 4+ years shipping DeFi and AI
-            products from 0→1 — RWA perps, DEXes, and now tokenized gold on
-            Ethereum. Frontend-heavy with full-stack depth, best where
-            engineering and product decisions are the same conversation.
+            I&rsquo;m a senior engineer and founder with 4+ years building DeFi
+            and AI products from 0→1. I&rsquo;ve built RWA perps, DEXes, and
+            tokenized gold on Ethereum. I focus on frontend work and build
+            across the stack. I like owning both engineering and product
+            decisions.
             <br /><br />
-            Besides code, I degen or play poker while looking for the next role.
+            Away from code, I degen and play poker. I&rsquo;m looking for my next role.
             <br /><br />
             Reach out via{" "}
             <SoundLink
@@ -105,7 +114,7 @@ export default function Home() {
             .
           </p>
 
-          {/* 4. Featured card — work carousel + commit graph */}
+          {/* 4. Featured card: work carousel + commit graph */}
           <div className="fade-in mt-12 flex flex-col gap-6" style={{ animationDelay: "100ms" }}>
             <WorkCarousel items={workItems} />
             <CommitGraph />
@@ -170,7 +179,7 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* 7. Writing — label links to the full essays index */}
+          {/* 7. Writing: label links to the full essays index */}
           <section className="fade-in mt-12" style={{ animationDelay: "250ms" }}>
             <h2 className="font-handwritten text-lg text-[color:var(--ink-soft)] mb-3 lowercase">
               <SoundLink
@@ -198,7 +207,7 @@ export default function Home() {
             </ul>
           </section>
 
-          {/* 8. Pictures — temporarily hidden, will add pictures later */}
+          {/* 8. Pictures: temporarily hidden, will add pictures later */}
           {/* <section className="fade-in mt-12" style={{ animationDelay: "300ms" }}>
             <SectionLabel>pictures</SectionLabel>
             <Polaroids photos={photoItems} />

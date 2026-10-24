@@ -1,6 +1,6 @@
 // Single source of truth for the essays index and the homepage "writing"
 // section. Each essay's title/description/date lives once, in its MDX
-// `export const metadata` — this registry just imports that object and pairs it
+// `export const metadata`: this registry just imports that object and pairs it
 // with the route slug. To publish a new essay: add its page.mdx under
 // app/writing/(post)/<slug>/, then add one line to `registry` below.
 //

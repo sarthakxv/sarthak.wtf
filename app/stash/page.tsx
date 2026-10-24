@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { PageShell } from "@/components/layout/PageShell";
 import { SoundLink } from "@/components/ui/SoundLink";
@@ -6,10 +7,11 @@ import { ScrambledText } from "@/components/ui/ScrambledText";
 import { Footer } from "@/components/home/Footer";
 import stash from "@/content/stash.json";
 
-export const metadata: Metadata = {
-  title: "Stash — Sarthak Verma",
-  description: "A curated list of personal sites worth seeing.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Stash | Sarthak Verma",
+  description: "A curated list of personal sites I keep coming back to",
+  path: "/stash",
+});
 
 type Link = { label: string; href: string; note?: string };
 
@@ -66,7 +68,7 @@ export default function StashPage() {
                 <ArrowUpRight size={10} weight="regular" aria-hidden className="translate-y-[-1px]" />
               </SoundLink>
               {l.note && (
-                <span className="ml-2 text-[color:var(--color-mid)]">— {l.note}</span>
+                <span className="ml-2 text-[color:var(--color-mid)]">({l.note})</span>
               )}
             </li>
           ))}

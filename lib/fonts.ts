@@ -1,7 +1,7 @@
 import { Caveat, Pacifico, JetBrains_Mono, Spectral } from "next/font/google";
 import localFont from "next/font/local";
 
-// Departure Mono — pixel/terminal display face for the "machine voice":
+// Departure Mono: pixel/terminal display face for the "machine voice":
 // dates, timestamps, numeric readouts and small meta labels. Not for code.
 export const departureMono = localFont({
   src: "../public/assets/DepartureMono-Regular.woff2",

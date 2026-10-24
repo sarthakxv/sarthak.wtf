@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useIndiaClock } from "@/hooks/useIndiaClock";
 import { ScrambledText } from "@/components/ui/ScrambledText";
 
-const LOOP_LINES = ["© {YEAR} Sarthak.", "stay curious and keep building."];
+const LOOP_LINES = ["© {YEAR} Sarthak.", "thanks for stopping by."];
 const LOOP_MS = 3500;
 
 function TextLoop() {

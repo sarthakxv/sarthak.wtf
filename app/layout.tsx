@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
+import { siteDescription, siteUrl } from "@/lib/metadata";
 import { caveat, pacifico, jetbrains, spectral, departureMono } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sarthak.dev"),
+  metadataBase: new URL(siteUrl),
   title: "Sarthak Verma",
-  description:
-    "Founding Engineer @ Gold.fi. Senior engineer and ex-founder shipping DeFi and AI products.",
+  description: siteDescription,
 };
 
 export default function RootLayout({

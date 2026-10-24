@@ -6,7 +6,7 @@ import { SIGNATURE_PATHS, SIGNATURE_VIEWBOX } from "./signaturePaths";
 /**
  * The signature's four strokes, drawn on in sequence like live handwriting;
  * as each stroke's outline finishes tracing, its ink floods in (the paths
- * are filled ink outlines, so fill — not stroke — is the finished look).
+ * are filled ink outlines, so fill produces the finished look).
  * WEIGHTS are each stroke's share of the total arc length (precomputed from
  * the path data; they sum to 1), so long strokes take proportionally longer
  * and each stroke starts as the previous one ends.
@@ -19,7 +19,7 @@ const MIN_DRAW_S = 0.08; // floor so the final i-dot registers as a stroke
 const FILL_FADE_S = 0.4; // ink flood-in once a stroke is mostly traced
 const FILL_START = 0.7; // fill begins at this fraction of the stroke's draw
 
-// viewBox is "minX minY width height" — width/height set the aspect ratio.
+// viewBox is "minX minY width height": width/height set the aspect ratio.
 const [, , VB_W, VB_H] = SIGNATURE_VIEWBOX.split(" ").map(Number);
 
 export function SignatureName({ height = 56 }: { height?: number }) {

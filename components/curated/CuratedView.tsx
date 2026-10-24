@@ -9,7 +9,7 @@ import { getCuratedItem } from "@/lib/curated";
 import { IndexList } from "./IndexList";
 import { SpecSheet } from "./SpecSheet";
 
-// Canvas is WebGL — never SSR it.
+// Canvas is WebGL: never SSR it.
 const CuratedCanvas = dynamic(
   () => import("./CuratedCanvas").then((m) => m.CuratedCanvas),
   { ssr: false },
@@ -35,7 +35,7 @@ export function CuratedView() {
 
   return (
     <main className="relative min-h-screen" style={{ background: "var(--bg-base)" }}>
-      {/* Persistent canvas layer — mounted once, focuses the selected item. */}
+      {/* Persistent canvas layer: mounted once, focuses the selected item. */}
       <div className="pointer-events-none fixed inset-0 z-0">
         <CuratedCanvas item={item} reducedMotion={reducedMotion} />
       </div>

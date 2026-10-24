@@ -83,7 +83,7 @@ export function CommitGraph() {
       .then((json) => {
         if (cancelled || !json || !Array.isArray(json.days)) return;
         // Only switch over if GitHub actually returned data and at least one
-        // day has activity — otherwise keep the seeded fallback so the graph
+        // day has activity: otherwise keep the seeded fallback so the graph
         // isn't a flat row of empty bars.
         const sum = json.days.reduce(
           (s: number, d: CommitDay) => s + (d.count ?? 0),

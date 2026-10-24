@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 
 /**
- * ScrambledText — a "decode" / text-scramble reveal, inspired by Maxime
+ * ScrambledText: a "decode" / text-scramble reveal, inspired by Maxime
  * Heckel's blog. On mount the string appears as random monospace glyphs and
  * settles left-to-right into the real value. Pairs with Departure Mono.
  *
  * The whole unrevealed tail is scrambled in place (not grown from empty), so
- * every character position is always occupied — zero layout shift, which
+ * every character position is always occupied: zero layout shift, which
  * matters for right-aligned timestamps in a fixed-width face.
  *
  * The reveal runs exactly once. Later `children` changes (e.g. a live clock)

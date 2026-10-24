@@ -58,7 +58,7 @@
   --ink-soft: #71717a;
 }
 
-/* Essay reading surface — warm paper: near-black ink on off-white. */
+/* Essay reading surface: warm paper: near-black ink on off-white. */
 [data-surface="paper"] {
   --bg-base: #faf9f6;
   --ink-fg: #1c1b1f;
@@ -89,7 +89,7 @@ h3 {
   font-family: var(--font-mono);
 }
 
-/* Departure Mono — machine/terminal voice: dates, timestamps, meta labels. */
+/* Departure Mono: machine/terminal voice: dates, timestamps, meta labels. */
 .font-departure {
   font-family: var(--font-departure);
 }
@@ -194,7 +194,7 @@ h3 {
 }
 
 /* Signature wordmark: each stroke's outline draws itself on, then its ink
-   floods in (the paths are filled ink outlines — fill is the finished look).
+   floods in (the paths are filled ink outlines; fill is the finished look).
    pathLength is normalised to 1, so dashoffset animates 1 (hidden) -> 0 (drawn).
    Per-stroke durations/delays for both animations are set inline by
    SignatureName.tsx. The global reduced-motion rule below snaps this to the
@@ -229,7 +229,7 @@ h3 {
 }
 
 /* List focus: while a list is hovered, only the row under the cursor stays
-   crisp — siblings blur and dim. Leaving the list restores every row.
+   crisp: siblings blur and dim. Leaving the list restores every row.
    Scoped to hover-capable pointers so touch scrolling never triggers it. */
 @media (hover: hover) {
   .focus-list > li {

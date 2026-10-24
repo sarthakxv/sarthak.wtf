@@ -4,8 +4,8 @@ import { SoundLink } from "@/components/ui/SoundLink";
 import { ScrambledText } from "@/components/ui/ScrambledText";
 
 export const metadata: Metadata = {
-  title: "404 — Sarthak Verma",
-  description: "This page slipped through the cracks.",
+  title: "Page not found | Sarthak Verma",
+  description: "I couldn't find the page at this address.",
 };
 
 const linkClass =
@@ -16,29 +16,28 @@ export default function NotFound() {
     <PageShell>
       <main className="relative min-h-screen text-[color:var(--ink-fg)]">
         <div className="max-w-xl mx-auto px-6 py-16 min-h-screen flex flex-col justify-center">
-          {/* Error code — machine voice, decoded on mount */}
+          {/* Error code: machine voice, decoded on mount */}
           <div className="fade-in" style={{ animationDelay: "0ms" }}>
             <ScrambledText className="font-departure text-6xl tracking-tight tabular-nums text-[color:var(--ink-fg)]">
               404
             </ScrambledText>
           </div>
 
-          {/* Soft label — handwritten */}
+          {/* Soft label: handwritten */}
           <h1
             className="fade-in font-handwritten text-2xl text-[color:var(--ink-soft)] mt-4 lowercase"
             style={{ animationDelay: "60ms" }}
           >
-            lost the thread
+            page not found
           </h1>
 
-          {/* Prose — the site's voice */}
+          {/* Prose: the site's voice */}
           <p
             className="fade-in mt-6 text-sm leading-relaxed text-[color:var(--ink-mid)]"
             style={{ animationDelay: "100ms" }}
           >
-            This page slipped through the cracks — maybe it moved, maybe it
-            never existed. Either way, there&rsquo;s nothing here. Head back and
-            pick up where you left off.
+            I couldn&rsquo;t find a page at this address. You can head back home
+            to find my work and writing.
           </p>
 
           {/* Return path */}

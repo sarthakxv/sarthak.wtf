@@ -1,4 +1,4 @@
-// Path data extracted from public/assets/sarthak-signature.svg — do not hand-edit.
+// Path data extracted from public/assets/sarthak-signature.svg: do not hand-edit.
 // Regenerate with the script in docs/superpowers/plans/2026-07-21-signature-wordmark.md (Task 1, Step 2).
 export const SIGNATURE_VIEWBOX = "283.042 234.317 539.539 141.639";
 
