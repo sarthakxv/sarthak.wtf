@@ -3,7 +3,7 @@
     "title": "Gold.Fi (Bullion Digital)",
     "role": "Founding Engineer",
     "period": "Jan 2026 to Jun 2026",
-    "summary": "I built a gold savings app for Indian consumers using Tether Gold (XAUT). Users can buy gold in under 10 seconds via UPI or USDC, skip paperwork, and earn yield on their holdings.",
+    "summary": "built a gold savings app for Indian consumers using Tether Gold (XAUT). Users can buy gold in under 10 seconds via UPI or USDC, skip paperwork, and earn yield on their holdings.",
     "image": "/work/goldfi-main.webp",
     "link": "https://gold.fi"
   },
@@ -11,7 +11,7 @@
     "title": "xaut.cool",
     "role": "Side project",
     "period": "2026",
-    "summary": "I built a dashboard to track XAUT supply across 8 chains, including native Ethereum supply and tokens bridged through LayerZero OFT.",
+    "summary": "built a dashboard to track XAUT supply across 8 chains, including native Ethereum supply and tokens bridged through LayerZero OFT.",
     "image": "/work/xaut-cover.webp",
     "link": "https://xaut-cool.vercel.app/"
   },
@@ -19,7 +19,7 @@
     "title": "pills.trade",
     "role": "Co-founder, Eido Labs",
     "period": "2025",
-    "summary": "I co-founded a perpetual DEX for trading stock, forex, and commodity derivatives through Telegram. We used synthetic pricing oracles to support 24/7 trading.",
+    "summary": "co-founded a bot for trading RWA derivatives through Telegram. We used synthetic pricing oracles to support 24/7 trading.",
     "image": "/work/pills-cover.webp",
     "link": "https://pills.trade/"
   },
@@ -27,7 +27,7 @@
     "title": "Eido App",
     "role": "Co-founder, Head of Engineering",
     "period": "2024 to 2025",
-    "summary": "I co-founded Eido and led engineering for a DeFi assistant on Berachain. Users could find protocols and execute transactions through chat. We used LangGraph to coordinate agents, reached 3,000+ users, and raised $500k.",
+    "summary": "co-founded Eido Labs and led engineering for a DeFi assistant on Berachain. Users could find protocols and execute transactions through chat. We used LangGraph to coordinate agents, reached 3,000+ users, and raised $500k.",
     "image": "/work/eido-cover.webp",
     "link": "https://eidolabs.xyz/"
   },
@@ -35,7 +35,7 @@
     "title": "Genie DEX",
     "role": "Founding Engineer #3, SquaredLabs",
     "period": "2024",
-    "summary": "I built the frontend architecture for a squared perpetuals DEX and shipped it to the Base Sepolia testnet.",
+    "summary": "built the frontend architecture for a squared perpetuals DEX and shipped it to the Base Sepolia testnet.",
     "image": "/work/genie-cover.webp",
     "link": "https://geniedex.io/"
   },

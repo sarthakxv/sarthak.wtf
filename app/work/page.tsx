@@ -46,7 +46,7 @@ export default function WorkPage() {
             Work
           </h1>
           <p className="mt-2 text-base text-[color:var(--color-mid)]">
-            Projects I&rsquo;ve built.
+            What I&rsquo;ve been shipping
           </p>
         </header>
 
