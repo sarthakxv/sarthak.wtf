@@ -16,6 +16,7 @@
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "@types/mdx": "^2.0.14",
+    "@vercel/analytics": "^2.0.1",
     "@web-kits/audio": "^0.1.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",

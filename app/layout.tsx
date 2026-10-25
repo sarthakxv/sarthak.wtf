@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { siteDescription, siteUrl } from "@/lib/metadata";
 import { caveat, pacifico, jetbrains, spectral, departureMono } from "@/lib/fonts";
 import "./globals.css";
@@ -21,7 +22,10 @@ export default function RootLayout({
       data-style="default"
       data-bg="leaves"
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
