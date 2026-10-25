@@ -48,7 +48,7 @@ export default function Home() {
         <h1 className="sr-only">Sarthak Verma</h1>
         <div className="max-w-xl mx-auto px-6 py-16">
           {/* 1. Wordmark: signature drawn on like live handwriting */}
-          <div className="fade-in text-[color:var(--ink-fg)]" style={{ animationDelay: "0ms" }}>
+          <div className="fade-in flex flex-wrap items-center gap-x-4 gap-y-2 text-[color:var(--ink-fg)]" style={{ animationDelay: "0ms" }}>
             <SignatureName />
           </div>
 
@@ -57,7 +57,7 @@ export default function Home() {
             className="fade-in mt-3 text-sm text-[color:var(--ink-soft)]"
             style={{ animationDelay: "30ms" }}
           >
-            Previously Founding Engineer / Head of Engineering @{" "}
+            Previously Head of Engineering @{" "}
             <SoundLink
               href="https://gold.fi"
               target="_blank"
@@ -68,41 +68,49 @@ export default function Home() {
             </SoundLink>
             {" · "}
             <SoundLink
-              href="https://drive.google.com/file/d/1jBC6_BoWhnsZi57PECc8HbKDHWHQL_Vd/view?usp=sharing"
+              href="https://drive.google.com/file/d/1jBC6_BoWhnsZi57PECc8HbKDHWHQL_Vd/view"
               target="_blank"
               rel="noopener noreferrer"
               sound="click"
               on="click"
               className={`inline-flex items-center gap-0.5 ${linkClass}`}
             >
-              resume
+              Resume
               <ArrowUpRightIcon size={11} weight="regular" aria-hidden className="translate-y-[1px]" />
             </SoundLink>
           </p>
 
           {/* 3. Intro */}
           <p
-            className="fade-in mt-6 text-sm leading-relaxed text-[color:var(--ink-mid)]"
+            className="fade-in mt-6 text-pretty text-sm leading-relaxed text-[color:var(--ink-mid)]"
             style={{ animationDelay: "50ms" }}
           >
-            I&rsquo;m a senior engineer and founder with 4+ years building DeFi
-            and AI products from 0→1. I&rsquo;ve built RWA perps, DEXes, and
-            tokenized gold on Ethereum. I focus on frontend work and build
-            across the stack. I like owning both engineering and product
-            decisions.
-            <br /><br />
-            Away from code, I degen and play poker. I&rsquo;m looking for my next role.
-            <br /><br />
-            Reach out via{" "}
+            I&rsquo;m a senior engineer and founder with ~5 years taking DeFi
+            and AI products 0→1. I&rsquo;ve built RWA products, perp DEXes, and
+            an agentic DeFi aggregator. I build across the stack and like
+            owning both engineering and product decisions.
+          </p>
+          <p
+            className="fade-in mt-4 text-pretty text-sm leading-relaxed text-[color:var(--ink-mid)]"
+            style={{ animationDelay: "50ms" }}
+          >
+            Away from code, I degen and play poker.
+          </p>
+          <p
+            className="fade-in mt-4 text-pretty text-sm leading-relaxed text-[color:var(--ink-mid)]"
+            style={{ animationDelay: "50ms" }}
+          >
+            <strong className="font-medium text-[color:var(--ink-fg)]">I&rsquo;m looking for my next role.</strong>{" "}
+            Reach out on{" "}
             <SoundLink
               href="https://t.me/sarthakxv"
               target="_blank"
               rel="noopener noreferrer"
               className={linkClass}
             >
-              telegram
+              Telegram
             </SoundLink>{" "}
-            or dm on{" "}
+            or{" "}
             <SoundLink
               href="https://x.com/0xSarthak"
               target="_blank"
