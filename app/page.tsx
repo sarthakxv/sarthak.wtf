@@ -166,15 +166,22 @@ export default function Home() {
                   key={item.title}
                   left={<span className="text-[color:var(--ink-fg)]">{item.title}</span>}
                   right={
-                    <a href={item.href} className={linkClass}>
-                      view
-                    </a>
+                    <span className="inline-flex gap-3">
+                      {"github" in item && (
+                        <a href={item.github} target="_blank" rel="noopener noreferrer" className={linkClass} aria-label={`${item.title} on GitHub`}>
+                          github
+                        </a>
+                      )}
+                      <a href={item.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                        view
+                      </a>
+                    </span>
                   }
                 />
               ))}
               <Row
                 left={<span className="text-[color:var(--ink-fg)]">curated supply</span>}
-                right={<SoundLink href="/curated" sound="click" on="click" className={linkClass}>view</SoundLink>}
+                right={<SoundLink href="/curated" target="_blank" rel="noopener noreferrer" sound="click" on="click" className={linkClass}>view</SoundLink>}
               />
             </ul>
           </section>
