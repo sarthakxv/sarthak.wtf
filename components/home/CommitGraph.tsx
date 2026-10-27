@@ -7,41 +7,20 @@ import { playTick } from "@/lib/sound";
 type CommitDay = {
   date: string; // YYYY-MM-DD
   count: number;
-  topRepo?: string | null;
+  level: number;
 };
 
-const REPO_NAME = "portfolio";
-
-function mulberry32(seed: number) {
-  let s = seed;
-  return function () {
-    s |= 0;
-    s = (s + 0x6d2b79f5) | 0;
-    let t = Math.imul(s ^ (s >>> 15), 1 | s);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
 function buildDays(): CommitDay[] {
-  const rng = mulberry32(7);
   const today = new Date();
-  today.setHours(12, 0, 0, 0);
   return Array.from({ length: 30 }, (_, i) => {
-    const dayOffset = 29 - i;
-    const d = new Date(today);
-    d.setDate(d.getDate() - dayOffset);
-    const r = rng();
-    const count = r < 0.35 ? 0 : Math.min(4, Math.floor(r * 5));
-    const yyyy = d.getFullYear();
-    const mm = String(d.getMonth() + 1).padStart(2, "0");
-    const dd = String(d.getDate()).padStart(2, "0");
-    return { date: `${yyyy}-${mm}-${dd}`, count };
+    const date = new Date(today);
+    date.setUTCDate(date.getUTCDate() - (29 - i));
+    return { date: date.toISOString().slice(0, 10), count: 0, level: 0 };
   });
 }
 
-function levelClass(count: number): string {
-  switch (count) {
+function levelClass(level: number): string {
+  switch (level) {
     case 0:
       return "bg-neutral-200/80";
     case 1:
@@ -74,28 +53,23 @@ export function CommitGraph() {
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [days, setDays] = useState<CommitDay[]>(() => buildDays());
-  const [source, setSource] = useState<"fallback" | "github">("fallback");
+  const [source, setSource] = useState<"loading" | "fallback" | "github">("loading");
 
   useEffect(() => {
     let cancelled = false;
     fetch("/api/commits", { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : null))
       .then((json) => {
-        if (cancelled || !json || !Array.isArray(json.days)) return;
-        // Only switch over if GitHub actually returned data and at least one
-        // day has activity: otherwise keep the seeded fallback so the graph
-        // isn't a flat row of empty bars.
-        const sum = json.days.reduce(
-          (s: number, d: CommitDay) => s + (d.count ?? 0),
-          0,
-        );
-        if (json.source === "github" && sum > 0) {
+        if (cancelled) return;
+        if (json?.source === "github" && Array.isArray(json.days)) {
           setDays(json.days as CommitDay[]);
           setSource("github");
+        } else {
+          setSource("fallback");
         }
       })
       .catch(() => {
-        /* keep fallback */
+        if (!cancelled) setSource("fallback");
       });
     return () => {
       cancelled = true;
@@ -171,7 +145,7 @@ export function CommitGraph() {
               onMouseLeave={handleLeave}
             >
               <div
-                className={`w-full rounded-[3px] ${levelClass(day.count)}`}
+                className={`w-full rounded-[3px] ${levelClass(day.level)}`}
                 style={{
                   height: 20,
                   transform: mounted
@@ -200,16 +174,13 @@ export function CommitGraph() {
               >
                 <div className="bg-neutral-900 text-white text-xs rounded-md px-2.5 py-1.5 whitespace-nowrap shadow-lg">
                   <p>{formatDate(day.date)}</p>
-                  {day.count > 0 ? (
-                    <p className="text-neutral-300">
-                      {day.count} commit{day.count !== 1 ? "s" : ""} ·{" "}
-                      <span className="text-neutral-400">
-                        {day.topRepo ?? REPO_NAME}
-                      </span>
-                    </p>
-                  ) : (
-                    <p className="text-neutral-400">No commits</p>
-                  )}
+                  <p className="text-neutral-300">
+                    {source === "github"
+                      ? `${day.count} contribution${day.count !== 1 ? "s" : ""}`
+                      : source === "loading"
+                        ? "Loading contributions…"
+                        : "Contributions unavailable"}
+                  </p>
                 </div>
               </div>
             </div>
@@ -234,7 +205,11 @@ export function CommitGraph() {
           )}
         </span>
         <span className="text-xs text-neutral-500 tabular-nums">
-          {total} commit{total !== 1 ? "s" : ""}
+          {source === "github"
+            ? `${total} contribution${total !== 1 ? "s" : ""}`
+            : source === "loading"
+              ? "Loading…"
+              : "Unavailable"}
         </span>
       </div>
     </section>
